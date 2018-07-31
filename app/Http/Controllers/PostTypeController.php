@@ -21,10 +21,9 @@ class PostTypeController extends Controller
      */
     public function index()
     {
-        $post_types = Post_type::all();
         return view(
             'posttype.index',
-            [$this->posttypes->all()]
+            ['posttypes' => $this->posttypes->all()]
         );
     }
 
