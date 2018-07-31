@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Post_type;
-use App\Post;
 
 use Illuminate\Http\Request;
 

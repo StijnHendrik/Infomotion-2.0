@@ -24,10 +24,14 @@ class CreatePostsTable extends Migration
             $table->string('text')
                 ->nullable();
             $table->integer('media_id')
+                ->nullable()
                 ->references('id')
                 ->on('media')
                 ->onDelete('cascade');
-            $table->integer('type_id');
+            $table->integer('type_id')
+                ->references('id')
+                ->on('post_types')
+                ->onDelete('cascade');
             $table->integer('position_x');
             $table->integer('position_y');
             $table->boolean('published');

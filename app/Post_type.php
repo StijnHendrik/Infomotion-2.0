@@ -8,8 +8,8 @@ class Post_type extends Model
 {
     protected $fillable = ['type'];
 
-    public function posts()
+    public function post()
     {
-        return $this->belongsTo('App\Post');
+        return $this->hasMany('App\Post', 'type_id', 'id');
     }
 }
