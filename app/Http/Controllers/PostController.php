@@ -3,18 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Post;
-use App\Post_type
 
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     protected $post;
-    protected $posttype;
 
-    public function __construct(Post $post, Post_type $posttype){
+    public function __construct(Post $post){
         $this->post = $post;
-        $this->posttype = $posttype;
     }
 
     /**

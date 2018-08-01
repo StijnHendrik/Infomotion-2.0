@@ -23,11 +23,6 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->string('text')
                 ->nullable();
-            $table->integer('media_id')
-                ->nullable()
-                ->references('id')
-                ->on('media')
-                ->onDelete('cascade');
             $table->integer('type_id')
                 ->references('id')
                 ->on('post_types')
