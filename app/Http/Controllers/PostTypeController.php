@@ -3,10 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Post_type;
+
 use Illuminate\Http\Request;
 
 class PostTypeController extends Controller
 {
+    protected $posttypes;
+
+    public function __construct(Post_type $post_type){
+        $this->posttypes = $post_type;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,10 @@ class PostTypeController extends Controller
      */
     public function index()
     {
-        //
+        return view(
+            'posttype.index',
+            ['posttypes' => $this->posttypes->all()]
+        );
     }
 
     /**

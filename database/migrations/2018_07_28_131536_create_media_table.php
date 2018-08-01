@@ -18,6 +18,11 @@ class CreateMediaTable extends Migration
             $table->string('source');
             $table->string('alt')
                 ->nullable;
+            $table->integer('post_id')
+                ->nullable()
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
