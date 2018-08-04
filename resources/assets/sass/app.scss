@@ -8,6 +8,12 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+h1 {  font-size: 28px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; }
+h3 {  font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; }
+p {  font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; }
+blockquote {  font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; }
+pre {  font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -30,33 +36,28 @@
 
   height: 60%;
 }
+.foto{
+  height: 30%;
+}
 .presentation{
 height: 650px;
-  background: 25% 22% no-repeat url(../../../public/img/bar-1.jpg?1a86bebc986dd5df6225d7bfb01a265a);
+  background: 25% 55% no-repeat url(../../../public/img/alcoholbar.jpg);
 }
 .callToAction{
   height: 64%;
-  width: 30%;
-  background-color: #0d2c54;
+  width: 42%;
+  background-color: $grey;
   opacity: 0.8;
   padding: 4%;
-  margin: 4.5% 21%;
-  h1, h4{
-    color: white;
+  margin: 6.5% 28%;
+   h4{
+    color: $dark-grey;
     margin:0 0 25px 0;
-    font-weight: normal;
+
     text-align: center;
-  }
-  h1{
+    font-size: 22px ;
+     font-weight: bold;
 
-    font-size: 48px;
-
-  }
-  h4{
-    font-size: 20px ;
-  }
-  a{
-    font-size: 15px;
   }
 }
 .row{
@@ -70,4 +71,11 @@ height: 650px;
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+.btn-container{
+  padding-left: 26%;
+}
+.logo-inline{
+  width: 70%;
+  padding-left:30%;
 }

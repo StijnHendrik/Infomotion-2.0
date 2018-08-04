@@ -5,11 +5,11 @@
             <div class="row landing ">
                 <div class="col-md-12" >
 
-                        {{--<img src="{{URL::asset('/img/bar-1.jpg')}}" alt="bar or restaurant" class="landingsfoto">--}}
 
-                    <div class="col-md-3 callToAction">
-                        <h1>Infomotion</h1>
-                        <h4>Digital information in motion</h4>
+
+                    <div class="col-md-6 callToAction">
+                        <img src="{{URL::asset('/img/logo.png')}}" alt="logo" class=" logo-inline">
+                        <h4>Your digital information in motion</h4>
                         <div class="btn-container">
                             <a href="#" class="btn">Read More!</a>
                         </div>
@@ -20,10 +20,24 @@
 
         </div>
     </div>
-    <div class="container intro" >
-        <div class="row  " id="section1">
+    <div class="container intro">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{URL::asset('/img/infomotion.jpg')}}" alt="bar or restaurant" class=" foto">
+            </div>
+                <div class="col-md-6">
+<p> Infomotion could be your newest high tech marking panel in your bar or restaurant</p>
+                </div>
+        </div>
+    </div>
+
+
+
+        <div class="row " >
             <div class="col-md-12 text-align-center text-center">
-                <h2>Main Features</h2>
+                <h1>Main Features</h1>
+                <br>
+                <br>
             </div>
             <div class="col-md-4 col-sm-12">
                 <!-- Promo Content 1 goes here -->
@@ -56,7 +70,7 @@
                     allow to use external data feeds, ad servers, webcams, news, market data or weather forecast.</p>
             </div>
         </div>
-    </div>
+
 
 
 
