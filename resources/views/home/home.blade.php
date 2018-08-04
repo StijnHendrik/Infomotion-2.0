@@ -1,24 +1,31 @@
 @extends('layouts.app')
 @section('content')
-    <div class="section" id="presentation">
-        <div class="container">
-            <div class="row valign-wrapper">
-                <div class="col s12 m6">
-                    <img src="{{URL::asset('/images/smartmockups.png')}}" alt="Digital big-screen">
+    <div class="section presentation">
+
+            <div class="row landing ">
+                <div class="col-md-12" >
+
+                        {{--<img src="{{URL::asset('/img/bar-1.jpg')}}" alt="bar or restaurant" class="landingsfoto">--}}
+
+                    <div class="col-md-3 callToAction">
+                        <h1>Infomotion</h1>
+                        <h4>Digital information in motion</h4>
+                        <div class="btn-container">
+                            <a href="#" class="btn">Read More!</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col s12 m6 center">
-                    <h1>Infomotion</h1>
-                    <h4>Digital information in motion</h4>
-                </div>
-            </div>
+
+
+
         </div>
     </div>
-    <div class="container valign-wrapper" id="home">
-        <div class="row center-align " id="section1">
-            <div class="col s12">
+    <div class="container intro" >
+        <div class="row  " id="section1">
+            <div class="col-md-12 text-align-center text-center">
                 <h2>Main Features</h2>
             </div>
-            <div class="col s12 m4">
+            <div class="col-md-4 col-sm-12">
                 <!-- Promo Content 1 goes here -->
                 <div class="mainIcon">
                     <i class="fal fa-camera-retro"></i>
@@ -27,7 +34,7 @@
                 <p>Digital signage management software with a powerful web-based administration environment. Scalable
                     and secure server-based management, distribution and playback engine.</p>
             </div>
-            <div class="col s12 m4">
+            <div class="col-md-4 col-sm-12">
                 <div class="mainIcon">
                     <i class="fal fa-tv"></i>
                 </div>
@@ -38,7 +45,7 @@
                     feeds and QR codes. Responsive design for automated adaptation to resolution and orientation of
                     target screens.</p>
             </div>
-            <div class="col s12 m4">
+            <div class="col-md-4 col-sm-12">
                 <div class="mainIcon">
                     <i class="fal fa-cogs"></i>
                 </div>
@@ -50,10 +57,7 @@
             </div>
         </div>
     </div>
-    <div class="parallax-container">
-        <div class="parallax">
-            <img src="{{URL::asset('/images/app.jpg')}}" class="ourProduct"></div>
-    </div>
+
 
 
 @endsection
