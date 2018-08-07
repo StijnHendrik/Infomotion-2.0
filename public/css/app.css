@@ -6,6 +6,14 @@
   line-height: 26.4px;
 }
 
+h2 {
+  font-size: 25px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 22.4px;
+}
+
 h3 {
   font-size: 14px;
   font-style: normal;
@@ -45,9 +53,8 @@ pre {
   background-color: #7fb800;
   border-radius: 8px;
   color: #fff;
-  font-family: 'Indie Flower', cursive;
   font-size: 1.9rem !important;
-  font-weight: normal;
+  font-weight: bold;
   text-decoration: none;
   text-align: center;
   display: inline-block;
@@ -10732,10 +10739,6 @@ pre {
   height: 60%;
 }
 
-.foto {
-  height: 30%;
-}
-
 .presentation {
   height: 650px;
   background: 25% 55% no-repeat url(/images/alcoholbar.jpg?112809c2db8cfc8879e3f54cc89fd456);
@@ -10745,7 +10748,7 @@ pre {
   height: 64%;
   width: 42%;
   background-color: #bcb8b1;
-  opacity: 0.8;
+  opacity: 0.9;
   padding: 4%;
   margin: 6.5% 28%;
 }
@@ -10780,5 +10783,28 @@ pre {
 .logo-inline {
   width: 70%;
   padding-left: 30%;
+}
+
+.intromotion {
+  height: 500px !important;
+  padding-top: 16%;
+  padding-bottom: 10%;
+}
+
+.intromotion .foto {
+  height: 110%;
+}
+
+.features {
+  padding: 10% 20%;
+  background-color: #bcb8b1;
+}
+
+.features p {
+  color: white;
+}
+
+.page-footer {
+  padding: 4% 0 1% 0;
 }
 
