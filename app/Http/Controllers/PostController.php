@@ -92,4 +92,12 @@ class PostController extends Controller
     {
         //
     }
+
+    public function grid()
+    {
+        return view(
+            'grid.index',
+            ['posts' => $this->post->all()]
+        );
+    }
 }

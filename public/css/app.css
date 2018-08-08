@@ -198,6 +198,66 @@ pre {
   }
 }
 
+#grid {
+  display: grid;
+  grid-template-columns: 33.333% 33.333% 33.333%;
+  grid-template-rows: 33.333% 33.333% 33.333%;
+  background: red;
+}
+
+.grid-item {
+  background: yellow;
+  margin: .1rem;
+}
+
+.grid-item[data-column-start="1"] {
+  grid-column-start: 1;
+}
+
+.grid-item[data-column-start="2"] {
+  grid-column-start: 2;
+}
+
+.grid-item[data-column-start="3"] {
+  grid-column-start: 3;
+}
+
+.grid-item[data-column-end="2"] {
+  grid-column-end: 2;
+}
+
+.grid-item[data-column-end="3"] {
+  grid-column-end: 3;
+}
+
+.grid-item[data-column-end="4"] {
+  grid-column-end: 4;
+}
+
+.grid-item[data-row-start="1"] {
+  grid-row-start: 1;
+}
+
+.grid-item[data-row-start="2"] {
+  grid-row-start: 2;
+}
+
+.grid-item[data-row-start="3"] {
+  grid-row-start: 3;
+}
+
+.grid-item[data-row-end="2"] {
+  grid-row-end: 2;
+}
+
+.grid-item[data-row-end="3"] {
+  grid-row-end: 3;
+}
+
+.grid-item[data-row-end="4"] {
+  grid-row-end: 4;
+}
+
 /*!
  * Bootstrap v4.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -10741,7 +10801,7 @@ pre {
 
 .presentation {
   height: 650px;
-  background: 25% 55% no-repeat url(/images/alcoholbar.jpg?112809c2db8cfc8879e3f54cc89fd456);
+  background: 25% 55% no-repeat url(/images/alcoholbar.jpg?3e4f65553b91de827045dbfc58bede03);
 }
 
 .callToAction {

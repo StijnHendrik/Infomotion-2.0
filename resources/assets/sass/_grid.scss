@@ -1,0 +1,69 @@
+#grid {
+  display: grid;
+  grid-template-columns: 33.333% 33.333% 33.333%;
+  grid-template-rows: 33.333% 33.333% 33.333%;
+  background: red;
+}
+
+.grid-item {
+  background: yellow;
+  margin: .1rem;
+}
+
+
+// COLUMN START
+
+.grid-item[data-column-start="1"] {
+  grid-column-start: 1;
+}
+
+.grid-item[data-column-start="2"] {
+  grid-column-start: 2;
+}
+
+.grid-item[data-column-start="3"] {
+  grid-column-start: 3;
+}
+
+// COLUMN END
+
+.grid-item[data-column-end="2"] {
+  grid-column-end: 2;
+}
+
+.grid-item[data-column-end="3"] {
+  grid-column-end: 3;
+}
+
+.grid-item[data-column-end="4"] {
+  grid-column-end: 4;
+}
+
+
+// ROW START
+
+.grid-item[data-row-start="1"] {
+  grid-row-start: 1;
+}
+
+.grid-item[data-row-start="2"] {
+  grid-row-start: 2;
+}
+
+.grid-item[data-row-start="3"] {
+  grid-row-start: 3;
+}
+
+// ROW END
+
+.grid-item[data-row-end="2"] {
+  grid-row-end: 2;
+}
+
+.grid-item[data-row-end="3"] {
+  grid-row-end: 3;
+}
+
+.grid-item[data-row-end="4"] {
+  grid-row-end: 4;
+}
