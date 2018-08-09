@@ -52,24 +52,24 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'media' => 'file|mimes:jpeg,bmp,png,jpg'
+        $post = $this->post->create([
+            'user_id' =>  Auth::user()->id,
+            'title' => $request->title,
+            'text' => $request->text,
+            'type_id' => $request->type_id,
+            'start_position_x' => $request->position_x,
+            'start_position_y' => $request->position_y,
+            'end_position_x' => $request->position_x,
+            'end_position_y' => $request->position_y,
+            'published' => $request->published,
         ]);
 
         if(isset($request->media)) {
-            $post = $this->post->create([
-               'user_id' =>  Auth::user()->id,
-                'title' => $request->title,
-                'text' => $request->text,
-                'type_id' => $request->type_id,
-                'start_position_x' => $request->position_x,
-                'start_position_y' => $request->position_x,
-                'end_position_x' => $request->position_y,
-                'end_position_y' => $request->position_y,
-                'published' => 1,
-            ]);
-            $this->uploadMedia($request->media, $request->title, $post->id);
+            foreach ($request->file('media') as $key => $value) {
+                $this->uploadMedia($value, $key, $post->id);
+            }
         }
+
         return back();
     }
 
@@ -132,7 +132,7 @@ class PostController extends Controller
     {
         $FKmediaID = new Media();
         $extension = $media->getClientOriginalExtension();
-        $filename = 'post-'.$post_id.'-'.$title.'-'.time().'.'.$extension;
+        $filename = 'post-'.$post_id.'-'.str_replace(' ', '-', $title).'-'.time().'.'.$extension;
         $altDescription = 'Picture from post with title: '.$title;
         $media->move('images/upload/', $filename);
         $media->source = $filename;

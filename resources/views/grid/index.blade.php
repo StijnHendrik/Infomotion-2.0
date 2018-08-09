@@ -16,7 +16,7 @@
                     <div class="row">
                     @foreach($post->media as $media)
                         <div class="col">
-                            <img src="{{ $media->source }}" alt="{{ $media->alt }}" width="20%">
+                            <img src="{{ url('/images/upload/').'/'.$media->source }}" alt="{{ $media->alt }}" width="20%">
                         </div>
                     @endforeach
                     </div>

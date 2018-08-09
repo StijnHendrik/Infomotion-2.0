@@ -9,7 +9,7 @@
         <input type="text" placeholder="title" name="title">
 
         <label for="text">Tekst:</label>
-        <input type="text" placeholder="title" name="text">
+        <input type="text" placeholder="text" name="text">
 
         <label for="type_id">Titel:</label>
         <select name="type_id">
@@ -25,7 +25,12 @@
         <input type="number" min="1" max="3" name="position_y" value="1">
 
         <label for="media">Foto:</label>
-        <input type="file" name="media" id="media">
+        <input type="file" name="media[]" id="media" multiple>
+
+        <label for="published">Publiceer:</label>
+        <input type="radio" value="1" name="published" checked>Publiceer
+        <input type="radio" value="0" name="published">Nog niet plaatsen
+
 
         <button type="submit">Toevoegen</button>
 
@@ -33,8 +38,9 @@
     <div class="row">
     @foreach($posts as $post)
         <div class="col-3">
-            <h4>{{ $post->title }}</h4>
-            <p>{{ $post->posttype->type }}</p>
+            <h1>{{ $post->title }}</h1>
+            <p>{{ $post->text }}</p>
+            <p>Positie x: {{ $post->start_position_x }} Positie y: {{ $post->start_position_y }}</p>
             @isset($post->media)
                 @foreach($post->media as $media)
                 <img src="{{ url('/images/upload/').'/'.$media->source }}" alt="{{ $media->alt }}" width="200px">

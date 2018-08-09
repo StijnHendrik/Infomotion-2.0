@@ -211,6 +211,8 @@ pre {
   margin: .1rem;
   padding: .5rem;
   min-height: 100%;
+  max-height: 20vh;
+  overflow: hidden;
   background: mediumseagreen;
   border: 5px solid white;
 }
