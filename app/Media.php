@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Media extends Model
 {
-    protected $fillable = ['source', 'alt'];
+    protected $fillable = ['source', 'alt', 'post_id'];
 
     public function post()
     {
