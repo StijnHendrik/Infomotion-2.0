@@ -30,14 +30,23 @@
         <button type="submit">Toevoegen</button>
 
     </form>
+    <div class="row">
     @foreach($posts as $post)
-        <h4>{{ $post->title }}</h4>
-        <p>{{ $post->posttype->type }}</p>
-        @isset($post->media)
-            @foreach($post->media as $media)
-            <img src="{{ url('/images/upload/').'/'.$media->source }}" alt="{{ $media->alt }}" width="200px">
-            @endforeach
-        @endisset
+        <div class="col-3">
+            <h4>{{ $post->title }}</h4>
+            <p>{{ $post->posttype->type }}</p>
+            @isset($post->media)
+                @foreach($post->media as $media)
+                <img src="{{ url('/images/upload/').'/'.$media->source }}" alt="{{ $media->alt }}" width="200px">
+                @endforeach
+            @endisset
+            <form method="post" action="/posts/{{ $post->id }}">
+                {{ method_field('DELETE') }}
+                @csrf
+                <button type="submit">Verwijder</button>
+            </form>
+        </div>
     @endforeach
+    </div>
 </div>
 @endsection

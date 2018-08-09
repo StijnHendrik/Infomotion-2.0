@@ -7,6 +7,7 @@ use App\Post;
 use App\Post_type;
 use App\Media;
 use Auth;
+use foo\bar;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -114,7 +115,9 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->post->destroy($id);
+
+        return back();
     }
 
     public function grid()
