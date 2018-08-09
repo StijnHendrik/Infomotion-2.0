@@ -15,10 +15,10 @@
                     <a class="nav-link" href="{{ route('login') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">Features</a>
+                    <a class="nav-link" href="{{ route('posts.index') }}">Posts</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">Contact</a>
+                    <a class="nav-link" href="{{ route('grid') }}">Grid</a>
                 </li>
             </ul>
 

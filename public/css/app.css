@@ -203,10 +203,16 @@ pre {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   grid-gap: 1rem;
+  background: lightseagreen;
+  padding: 2rem;
 }
 
 .grid-item {
   margin: .1rem;
+  padding: .5rem;
+  min-height: 100%;
+  background: mediumseagreen;
+  border: 5px solid white;
 }
 
 .grid-item[data-column-start="1"] {
@@ -255,6 +261,10 @@ pre {
 
 .grid-item[data-row-end="4"] {
   grid-row-end: 4;
+}
+
+img {
+  width: 100%;
 }
 
 /*!
