@@ -27,8 +27,10 @@ class CreatePostsTable extends Migration
                 ->references('id')
                 ->on('post_types')
                 ->onDelete('cascade');
-            $table->integer('position_x');
-            $table->integer('position_y');
+            $table->integer('start_position_x');
+            $table->integer('end_position_x');
+            $table->integer('start_position_y');
+            $table->integer('end_position_y');
             $table->boolean('published');
             $table->timestamps();
         });

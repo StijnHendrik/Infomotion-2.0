@@ -4,14 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Post;
 
+use App\Post_type;
+use App\Media;
+use Auth;
+use foo\bar;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     protected $post;
 
-    public function __construct(Post $post){
+    public function __construct(Post $post, Post_type $post_type, Media $media){
         $this->post = $post;
+        $this->post_type = $post_type;
+        $this->media = $media;
     }
 
     /**
@@ -23,7 +29,8 @@ class PostController extends Controller
     {
         return view(
             'posts.index',
-            ['posts' => $this->post->all()]
+            ['posts' => $this->post->all(),
+            'post_types' => $this->post_type->all()]
         );
     }
 
@@ -45,7 +52,25 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $post = $this->post->create([
+            'user_id' =>  Auth::user()->id,
+            'title' => $request->title,
+            'text' => $request->text,
+            'type_id' => $request->type_id,
+            'start_position_x' => $request->position_x,
+            'start_position_y' => $request->position_y,
+            'end_position_x' => $request->position_x,
+            'end_position_y' => $request->position_y,
+            'published' => $request->published,
+        ]);
+
+        if(isset($request->media)) {
+            foreach ($request->file('media') as $key => $value) {
+                $this->uploadMedia($value, $key, $post->id);
+            }
+        }
+
+        return back();
     }
 
     /**
@@ -90,6 +115,39 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->post->destroy($id);
+
+        return back();
+    }
+
+    public function grid()
+    {
+        return view(
+            'grid.index',
+            ['posts' => $this->post->where('published',1)->get()]
+        );
+    }
+
+    public function uploadMedia($media, $title, $post_id)
+    {
+        $FKmediaID = new Media();
+        $extension = $media->getClientOriginalExtension();
+        $filename = 'post-'.$post_id.'-'.str_replace(' ', '-', $title).'-'.time().'.'.$extension;
+        $altDescription = 'Picture from post with title: '.$title;
+        $media->move('images/upload/', $filename);
+        $media->source = $filename;
+        $media = $this->media->create([
+            'source' => $filename,
+            'alt' => $altDescription,
+            'post_id' => $post_id]);
+    }
+
+    public function deleteImage($mediaID)
+    {
+        $imageFile = $this->media->find($mediaID);
+        $imagePath = "images/upload/" . $imageFile->source;
+        File::delete($imagePath);
+        Media::destroy($mediaID);
+        return back()->with('succesPlayer', 'De afbeelding is verwijderd');
     }
 }
