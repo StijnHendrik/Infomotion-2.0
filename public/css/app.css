@@ -200,13 +200,12 @@ pre {
 
 #grid {
   display: grid;
-  grid-template-columns: 33.333% 33.333% 33.333%;
-  grid-template-rows: 33.333% 33.333% 33.333%;
-  background: red;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 1rem;
 }
 
 .grid-item {
-  background: yellow;
   margin: .1rem;
 }
 

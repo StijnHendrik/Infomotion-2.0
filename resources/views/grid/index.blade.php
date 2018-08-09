@@ -1,19 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <h1>Grid</h1>
 
     <div id="grid" class="grid">
-        <div class="grid-item">1</div>
-        <div class="grid-item">1</div>
-        <div class="grid-item">1</div>
-        <div class="grid-item" data-column-start="1" data-column-end="3" data-row-start="3">de kortere</div>
-        <div class="grid-item">1</div>
-        <div class="grid-item" data-column-start="2" data-column-end="4" data-row-start="3">de langere</div>
-        <div class="grid-item">1</div>
-        <div class="grid-item">1</div>
-        <div class="grid-item">1</div>
+        @foreach($posts as $post)
+            <div class="grid-item" data-column-start="{{ $post->start_position_x }}" data-column-end="{{ $post->end_position_x }}" data-row-start="{{ $post->start_position_y }}" data-row-end="{{ $post->end_position_y }}">
+                {{ $post->posttype->type }}
+                @isset($post->media)
+                    @foreach($post->media as $media)
+                        <img src="{{ $media->source }}" alt="{{ $media->alt }}" width="20%">
+                    @endforeach
+                @endisset
+            </div>
+        @endforeach
     </div>
     </div>
 </div>

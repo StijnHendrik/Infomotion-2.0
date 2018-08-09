@@ -97,7 +97,7 @@ class PostController extends Controller
     {
         return view(
             'grid.index',
-            ['posts' => $this->post->all()]
+            ['posts' => $this->post->where('published',1)->get()]
         );
     }
 }
