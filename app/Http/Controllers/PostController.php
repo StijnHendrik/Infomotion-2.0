@@ -7,6 +7,7 @@ use App\Post;
 use App\Post_type;
 use App\Media;
 use Auth;
+use Exception;
 use foo\bar;
 use Illuminate\Http\Request;
 
@@ -52,6 +53,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        try {
         $post = $this->post->create([
             'user_id' =>  Auth::user()->id,
             'title' => $request->title,
@@ -63,10 +65,14 @@ class PostController extends Controller
             'end_position_y' => $request->position_y,
             'published' => $request->published,
         ]);
+        } catch (Exception $exception)
+        {
+            return back()->with('error', 'Er is al een post op deze positie!');
+        }
 
         if(isset($request->media)) {
             foreach ($request->file('media') as $key => $value) {
-                $this->uploadMedia($value, $key, $post->id);
+                $this->uploadMedia($value, $request->title, $key, $post->id);
             }
         }
 
@@ -116,6 +122,7 @@ class PostController extends Controller
     public function destroy($id)
     {
         $this->post->destroy($id);
+        $this->media->where('post_id', $id)->delete();
 
         return back();
     }
@@ -128,11 +135,11 @@ class PostController extends Controller
         );
     }
 
-    public function uploadMedia($media, $title, $post_id)
+    public function uploadMedia($media, $title, $key, $post_id)
     {
         $FKmediaID = new Media();
         $extension = $media->getClientOriginalExtension();
-        $filename = 'post-'.$post_id.'-'.str_replace(' ', '-', $title).'-'.time().'.'.$extension;
+        $filename = 'post-'.$post_id.'-'.str_replace(' ', '-', $title).'-'.$key.'-'.time().'.'.$extension;
         $altDescription = 'Picture from post with title: '.$title;
         $media->move('images/upload/', $filename);
         $media->source = $filename;
@@ -147,7 +154,7 @@ class PostController extends Controller
         $imageFile = $this->media->find($mediaID);
         $imagePath = "images/upload/" . $imageFile->source;
         File::delete($imagePath);
-        Media::destroy($mediaID);
-        return back()->with('succesPlayer', 'De afbeelding is verwijderd');
+        $this->media->destroy($mediaID);
+        return back();
     }
 }

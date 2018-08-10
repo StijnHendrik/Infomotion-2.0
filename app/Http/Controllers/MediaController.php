@@ -3,10 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Media;
+use File;
 use Illuminate\Http\Request;
 
 class MediaController extends Controller
 {
+    public function __construct(Media $media){
+        $this->media = $media;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -78,8 +82,20 @@ class MediaController extends Controller
      * @param  \App\Media  $media
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Media $media)
+    public function destroy($mediaID)
     {
-        //
+
+        $this->deleteImage($mediaID);
+
+        return back();
+    }
+
+    public function deleteImage($mediaID)
+    {
+        $imageFile = $this->media->find($mediaID);
+        $imagePath = "images/upload/" . $imageFile->source;
+        File::delete($imagePath);
+        $this->media->destroy($mediaID);
+        return back();
     }
 }
