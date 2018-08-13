@@ -14,6 +14,8 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     protected $post;
+    protected $post_type;
+    protected $media;
 
     public function __construct(Post $post, Post_type $post_type, Media $media){
         $this->post = $post;
