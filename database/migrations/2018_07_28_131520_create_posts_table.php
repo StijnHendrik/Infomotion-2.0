@@ -28,12 +28,13 @@ class CreatePostsTable extends Migration
                 ->on('post_types')
                 ->onDelete('cascade');
             $table->integer('start_position_x');
-            $table->integer('end_position_x');
+            $table->integer('end_position_x')
+                ->nullable();
             $table->integer('start_position_y');
-            $table->integer('end_position_y');
+            $table->integer('end_position_y')
+                ->nullable();
             $table->boolean('published');
             $table->timestamps();
-            $table->unique(['start_position_x', 'start_position_y', 'published']);
         });
     }
 

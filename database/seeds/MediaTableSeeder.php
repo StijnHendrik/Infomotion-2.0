@@ -1,0 +1,18 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class MediaTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        factory(App\Media::class, 10)->create()->each(function ($u) {
+            $u->media()->save(factory(App\Media::class)->make());
+        });
+    }
+}

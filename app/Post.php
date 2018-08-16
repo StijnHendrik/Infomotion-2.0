@@ -10,7 +10,7 @@ class Post extends Model
 
     public function posttype()
     {
-        return $this->belongsTo('App\Post_type', 'type_id');
+        return $this->belongsTo('App\Post_type');
     }
 
     public function media()

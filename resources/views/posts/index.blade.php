@@ -2,10 +2,12 @@
 
 @section('content')
 <div class="container">
-    <h1>Posts:</h1>
     @if(session('error'))
-        {{ session('error') }}
+        <div class="notification-error">
+            <h2>{{ session('error') }}</h2>
+        </div>
     @endif
+    <h1>Posts:</h1>
     <form action="/posts" enctype="multipart/form-data" method="post" files="true">
         @csrf
         <label for="title">Titel:</label>
@@ -44,6 +46,7 @@
             <h1>{{ $post->title }}</h1>
             <p>{{ $post->text }}</p>
             <p>Positie x: {{ $post->start_position_x }} Positie y: {{ $post->start_position_y }}</p>
+            <p>{{ $post->published }}</p>
             @isset($post->media)
                 @foreach($post->media as $media)
                 <img src="{{ url('/images/upload/').'/'.$media->source }}" alt="{{ $media->alt }}" width="200px">

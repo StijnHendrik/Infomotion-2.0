@@ -32,7 +32,9 @@ class PostController extends Controller
     {
         return view(
             'posts.index',
-            ['posts' => $this->post->all(),
+            ['posts' => $this->post
+                ->where('user_id', Auth::user()->id)
+                ->get(),
             'post_types' => $this->post_type->all()]
         );
     }
@@ -55,30 +57,39 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        try {
-        $post = $this->post->create([
-            'user_id' =>  Auth::user()->id,
-            'title' => $request->title,
-            'text' => $request->text,
-            'type_id' => $request->type_id,
-            'start_position_x' => $request->position_x,
-            'start_position_y' => $request->position_y,
-            'end_position_x' => $request->position_x,
-            'end_position_y' => $request->position_y,
-            'published' => $request->published,
-        ]);
-        } catch (Exception $exception)
+        $postTaken = $this->post
+            ->where('start_position_x', $request->position_x)
+            ->where('start_position_y', $request->position_y)
+            ->where('published', 1)
+            ->get();
+        if (empty($postTaken))
         {
-            return back()->with('error', 'Er is al een post op deze positie!');
-        }
+            $post = $this->post->create([
+                'user_id' =>  Auth::user()->id,
+                'title' => $request->title,
+                'text' => $request->text,
+                'type_id' => $request->type_id,
+                'start_position_x' => $request->position_x,
+                'start_position_y' => $request->position_y,
+                'end_position_x' => $request->position_x,
+                'end_position_y' => $request->position_y,
+                'published' => $request->published,
+            ]);
 
-        if(isset($request->media)) {
-            foreach ($request->file('media') as $key => $value) {
-                $this->uploadMedia($value, $request->title, $key, $post->id);
+            if(isset($request->media)) {
+                foreach ($request->file('media') as $key => $value) {
+                    $this->uploadMedia($value, $request->title, $key, $post->id);
+                }
             }
+
+            return back();
+        }
+        else {
+            return back()->with('error', 'Er is al een post gepubliceerd op deze locatie.');
         }
 
-        return back();
+
+
     }
 
     /**
@@ -89,7 +100,22 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = $this->post
+            ->where('user_id', Auth::user()->id)
+            ->find($id);
+
+        if(!empty($post))
+        {
+            return view(
+                'posts.show',
+                ['post' => $post]
+            );
+        }
+        else
+        {
+            return redirect('/posts')->with('error', 'Dit is geen post aangemaakt door '.Auth::user()->name);
+        }
+
     }
 
     /**
