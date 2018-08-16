@@ -3,6 +3,9 @@
 @section('content')
 <div class="container">
     <h1>Posts:</h1>
+    @if(session('error'))
+        {{ session('error') }}
+    @endif
     <form action="/posts" enctype="multipart/form-data" method="post" files="true">
         @csrf
         <label for="title">Titel:</label>
@@ -44,10 +47,15 @@
             @isset($post->media)
                 @foreach($post->media as $media)
                 <img src="{{ url('/images/upload/').'/'.$media->source }}" alt="{{ $media->alt }}" width="200px">
+                <form method="post" action="/media/{{ $media->id }}">
+                    @method('delete')
+                    @csrf
+                    <button type="submit">Verwijder afbeelding</button>
+                </form>
                 @endforeach
             @endisset
             <form method="post" action="/posts/{{ $post->id }}">
-                {{ method_field('DELETE') }}
+                @method('delete')
                 @csrf
                 <button type="submit">Verwijder</button>
             </form>
