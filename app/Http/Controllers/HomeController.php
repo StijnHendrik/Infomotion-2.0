@@ -8,4 +8,14 @@ class HomeController extends Controller
     {
         return view('home.home');
     }
+
+    public function privacy()
+    {
+        return view('privacy.privacy');
+    }
+
+    public function av()
+    {
+        return view('privacy.algemenevoorwaarde');
+    }
 }
