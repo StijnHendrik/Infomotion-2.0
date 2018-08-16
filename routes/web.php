@@ -12,9 +12,12 @@ Route::get('/', 'HomeController@index')
 Route::get('/home', 'HomeController@index')
     ->name('home');
 Route::get('/grid', 'PostController@grid')
-    ->name('grid');
+    ->name('grid')
+    ->middleware('auth');;
 
 Route::resource('posttypes', 'PostTypeController')
     ->middleware('auth');
 Route::resource('posts', 'PostController')
+    ->middleware('auth');
+Route::resource('media', 'MediaController')
     ->middleware('auth');

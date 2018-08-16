@@ -6,7 +6,7 @@ $body-bg: #f5f8fa;
 $font-family-sans-serif: "Raleway", sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
-
+// Colors
 $dark-grey: #463f3a;
 $grey: #bcb8b1;
 $appleblue: #70a9a1;
@@ -14,6 +14,7 @@ $green: #7fb800;
 $darkerGreen: darken (#7fb800, 20%);
 $darkblue: #0d2c54;
 
+// Font
 h1 {  font-size: 28px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; }
 h2 {  font-size: 25px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 22.4px; }
 h3 {  font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; }

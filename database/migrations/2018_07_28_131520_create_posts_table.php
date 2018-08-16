@@ -33,6 +33,7 @@ class CreatePostsTable extends Migration
             $table->integer('end_position_y');
             $table->boolean('published');
             $table->timestamps();
+            $table->unique(['start_position_x', 'start_position_y', 'published']);
         });
     }
 

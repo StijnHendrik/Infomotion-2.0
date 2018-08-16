@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+<nav class="navbar navbar-expand-md navbar-light">
     <div class="container">
         <a id="logo" href="{{ url('/') }}">
             <img src="{{ asset('img/logo.png')}}" id="logo" alt="logo infomotion" class="logo navbar-brand">

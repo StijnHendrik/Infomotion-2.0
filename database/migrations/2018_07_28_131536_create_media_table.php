@@ -21,7 +21,7 @@ class CreateMediaTable extends Migration
             $table->integer('post_id')
                 ->nullable()
                 ->references('id')
-                ->on('users')
+                ->on('posts')
                 ->onDelete('cascade');
             $table->timestamps();
         });
