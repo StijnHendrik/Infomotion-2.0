@@ -19,5 +19,6 @@ Route::resource('posttypes', 'PostTypeController')
     ->middleware('auth');
 Route::resource('posts', 'PostController')
     ->middleware('auth');
+Route::post('/updatepost', 'PostController@edit');
 Route::resource('media', 'MediaController')
     ->middleware('auth');
