@@ -33,8 +33,8 @@
         <input type="file" name="media[]" id="media" multiple>
 
         <label for="published">Publiceer:</label>
-        <input type="radio" value="1" name="published" checked>Publiceer
-        <input type="radio" value="0" name="published">Nog niet plaatsen
+        <input type="radio" value="true" name="published" checked>Publiceer
+        <input type="radio" value="" name="published">Nog niet plaatsen
 
 
         <button type="submit">Toevoegen</button>
@@ -57,6 +57,7 @@
                 </form>
                 @endforeach
             @endisset
+            <a href="{{ url('posts/'.$post->id) }}">bewerk</a>
             <form method="post" action="/posts/{{ $post->id }}">
                 @method('delete')
                 @csrf

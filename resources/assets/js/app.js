@@ -6,8 +6,9 @@
  */
 
 require('./bootstrap');
-
+required('./main');
 window.Vue = require('vue');
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -20,3 +21,4 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 const app = new Vue({
     el: '#app'
 });
+

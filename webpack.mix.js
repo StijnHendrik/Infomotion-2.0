@@ -11,8 +11,12 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
-
-
 mix.browserSync(process.env.MIX_APP_URL);
+
+mix.js('resources/assets/js/app.js', 'public/js')
+    .js('resources/assets/js/main.js', 'public/js')
+    .sass('resources/assets/sass/app.scss', 'public/css')
+    .sourceMaps()
+
+
+
