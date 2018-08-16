@@ -1,69 +1,127 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    @if(session('error'))
-        <div class="notification-error">
-            <h2>{{ session('error') }}</h2>
+
+
+    <div class="container-fluid dashboard">
+        <div class="row">
+
+            <div class="col-md-4">
+                <ul class="vertical-menu">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('dashboard') }}">Index</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('posts.index') }}">Posts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('grid') }}">Grid</a>
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <div class="col-md-8">
+                <div class=" post">
+                    @if(session('error'))
+                        <div class="notification-error">
+                            <h2>{{ session('error') }}</h2>
+                        </div>
+                    @endif
+                    <h1>Posts:</h1>
+                    <form action="/posts" enctype="multipart/form-data" method="post" files="true" class="">
+                        @csrf
+                        <div class="form-group row">
+                        <label for="title" class="col-2 col-form-label">Titel:</label>
+                            <div class="col-5">
+                        <input type="text" placeholder="title" name="title" class="input-txt">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                        <label for="text" class="col-2 col-form-label">Tekst:</label>
+                            <div class="col-5">
+                        <input type="text" placeholder="text" name="text" class="input-txt">
+                            </div>
+                        </div>
+{{----}}
+                        <div class="form-group row">
+                        <label for="type_id" class="col-2 col-form-label">Titel:</label>
+                            <div class="col-5">
+                        <select name="type_id" class="input-txt">
+                            @foreach($post_types as $post_type)
+                                <option value="{{ $post_type->id }}">{{ $post_type->type }}</option>
+                            @endforeach
+                        </select>
+                        </div>
+                        </div>
+                            {{----}}
+
+                            <div class="form-group row">
+                        <label for="start_position_x" class="col-2 col-form-label">Positie X:</label>
+                                <div class="col-5">
+                        <input type="number" min="1" max="3" name="position_x" value="1" class="input-txt">
+                            </div>
+                            </div>
+                        <div class="row form-group">
+
+                            <label for="start_position_y" class="col-2 col-form-label">Positie Y:</label>
+                            <div class="col-5">
+                            <input type="number" min="1" max="3" name="position_y" value="1" class="input-txt">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <label for="media" class="col-2 col-form-label">Foto:</label>
+                            <div class="col-10">
+                            <input type="file" class="btn" name="media[]" id="media" multiple>
+                            </div>
+                        </div>
+
+
+                        <div class="custom-control custom-radio row form-check">
+                            <label for="published" class="custom-control-label">
+
+                                <input type="radio" class="custom-control-input" value="1" name="published" checked>Publiceer</label>
+
+                            <label class="form-check-label">
+                            <input type="radio" class="custom-control-input" value="0" name="published">Nog niet plaatsen</label>
+
+
+                        </div>
+                        <button type="submit" class="btn">Toevoegen</button>
+
+                    </form>
+                    <div class="row">
+                        @foreach($posts as $post)
+                            <div class="col-3">
+                                <h1>{{ $post->title }}</h1>
+                                <p>{{ $post->text }}</p>
+                                <p>Positie x: {{ $post->start_position_x }} Positie y: {{ $post->start_position_y }}</p>
+                                <p>{{ $post->published }}</p>
+                                @isset($post->media)
+                                @foreach($post->media as $media)
+                                    <img src="{{ url('/images/upload/').'/'.$media->source }}" alt="{{ $media->alt }}" width="200px">
+                                    <form method="post" action="/media/{{ $media->id }}">
+                                        @method('delete')
+                                        @csrf
+                                        <button type="submit">Verwijder afbeelding</button>
+                                    </form>
+                                @endforeach
+                                @endisset
+                                <form method="post" action="/posts/{{ $post->id }}">
+                                    @method('delete')
+                                    @csrf
+                                    <button type="submit">Verwijder</button>
+                                </form>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
         </div>
-    @endif
-    <h1>Posts:</h1>
-    <form action="/posts" enctype="multipart/form-data" method="post" files="true">
-        @csrf
-        <label for="title">Titel:</label>
-        <input type="text" placeholder="title" name="title">
-
-        <label for="text">Tekst:</label>
-        <input type="text" placeholder="text" name="text">
-
-        <label for="type_id">Titel:</label>
-        <select name="type_id">
-            @foreach($post_types as $post_type)
-                <option value="{{ $post_type->id }}">{{ $post_type->type }}</option>
-            @endforeach
-        </select>
-
-        <label for="start_position_x">Positie X:</label>
-        <input type="number" min="1" max="3" name="position_x" value="1">
-
-        <label for="start_position_y">Positie Y:</label>
-        <input type="number" min="1" max="3" name="position_y" value="1">
-
-        <label for="media">Foto:</label>
-        <input type="file" name="media[]" id="media" multiple>
-
-        <label for="published">Publiceer:</label>
-        <input type="radio" value="1" name="published" checked>Publiceer
-        <input type="radio" value="0" name="published">Nog niet plaatsen
-
-
-        <button type="submit">Toevoegen</button>
-
-    </form>
-    <div class="row">
-    @foreach($posts as $post)
-        <div class="col-3">
-            <h1>{{ $post->title }}</h1>
-            <p>{{ $post->text }}</p>
-            <p>Positie x: {{ $post->start_position_x }} Positie y: {{ $post->start_position_y }}</p>
-            <p>{{ $post->published }}</p>
-            @isset($post->media)
-                @foreach($post->media as $media)
-                <img src="{{ url('/images/upload/').'/'.$media->source }}" alt="{{ $media->alt }}" width="200px">
-                <form method="post" action="/media/{{ $media->id }}">
-                    @method('delete')
-                    @csrf
-                    <button type="submit">Verwijder afbeelding</button>
-                </form>
-                @endforeach
-            @endisset
-            <form method="post" action="/posts/{{ $post->id }}">
-                @method('delete')
-                @csrf
-                <button type="submit">Verwijder</button>
-            </form>
-        </div>
-    @endforeach
     </div>
-</div>
+
 @endsection

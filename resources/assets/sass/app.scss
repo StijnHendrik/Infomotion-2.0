@@ -34,6 +34,9 @@ ul, li, a{
     color: $dark-grey;
   }
 }
+.nav-item{
+  padding-right: 12%;
+}
 .landingsfoto{
 
   height: 60%;
@@ -167,4 +170,48 @@ height: 650px;
     color:$dark-grey;
     font-size: 12px;
   }
+}
+// dashboard index
+
+
+.dashboard{
+  padding: 5%;
+  min-height: 600px;
+}
+
+.vertical-menu{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  li a {
+    display: block;
+    color: $darkblue;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-align: center;
+
+    &:hover {
+      background-color: $dark-grey;
+      color: white;
+    }
+  }
+  li{
+    border-bottom: 1px solid #555;
+    &:hover {
+      background-color: $dark-grey;
+
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+
+
+}
+
+.col-form-label{
+  font-size: 15px;
 }

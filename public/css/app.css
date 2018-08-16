@@ -10668,6 +10668,10 @@ a {
   color: #463f3a;
 }
 
+.nav-item {
+  padding-right: 12%;
+}
+
 .landingsfoto {
   height: 60%;
 }
@@ -10820,5 +10824,47 @@ a {
   margin: 0 0 0 20px;
   color: #463f3a;
   font-size: 12px;
+}
+
+.dashboard {
+  padding: 5%;
+  min-height: 600px;
+}
+
+.vertical-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+}
+
+.vertical-menu li a {
+  display: block;
+  color: #0d2c54;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.vertical-menu li a:hover {
+  background-color: #463f3a;
+  color: white;
+}
+
+.vertical-menu li {
+  border-bottom: 1px solid #555;
+}
+
+.vertical-menu li:hover {
+  background-color: #463f3a;
+}
+
+.vertical-menu li:last-child {
+  border-bottom: none;
+}
+
+.col-form-label {
+  font-size: 15px;
 }
 
