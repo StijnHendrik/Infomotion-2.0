@@ -10,8 +10,10 @@
                     <div class="col-md-6 callToAction">
                         <img src="{{URL::asset('/img/logo.png')}}" alt="logo" class=" logo-inline">
                         <h4>Your digital information in motion</h4>
+                        <br>
+                        <h4>Register now and get a 2 week free trial !!</h4>
                         <div class="btn-container">
-                            <a href="#" class="btn text-uppercase">Read More!</a>
+                            <a href="{{ route('register') }}" class="btn text-uppercase">Start your free trial!</a>
                         </div>
                     </div>
                 </div>
@@ -52,7 +54,7 @@ It is all possible with the Informotion.
                 <h2>Central Control</h2>
                 <p>Digital signage management software with a powerful web-based administration environment. Scalable
                     and secure server-based management, distribution and playback engine. Build on the latest technology as result this web application is highly secure.</p>
-                <a class="btn " href="#">Register now!</a>
+                <a class="btn " href="{{ route('register') }}">Register now!</a>
             </div>
             <div class="col-md-4 col-sm-12 text-center">
                 <div class="mainIcon ">
@@ -64,7 +66,7 @@ It is all possible with the Informotion.
                     images, styled text,
                     feeds and QR codes. Responsive design for automated adaptation to resolution and orientation of
                     target screens.</p>
-                <a class="btn " href="#">Register now!</a>
+                <a class="btn " href="{{ route('register') }}">Register now!</a>
             </div>
             <div class="col-md-4 col-sm-12 text-center">
                 <div class="mainIcon ">
@@ -75,7 +77,7 @@ It is all possible with the Informotion.
                 <p>Clever apps, tools and modules can be easily integrated in content slides and animated posters.
                     Intelligent bricks
                     allow to use external data feeds, ad servers, webcams, news, market data or weather forecast.</p>
-                <a class="btn " href="#">Register now!</a>
+                <a class="btn " href="{{ route('register') }}">Register now!</a>
             </div>
         </div>
 

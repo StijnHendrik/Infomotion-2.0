@@ -17,8 +17,10 @@ Route::get('/av', 'HomeController@av')
     ->name('av');
 Route::get('/grid', 'PostController@grid')
     ->name('grid')
-    ->middleware('auth');;
-
+    ->middleware('auth');
+Route::get('/index', 'DashboardController@index')
+    ->name('index')
+    ->middleware('auth');
 Route::resource('posttypes', 'PostTypeController')
     ->middleware('auth');
 Route::resource('posts', 'PostController')

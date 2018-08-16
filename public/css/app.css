@@ -60,8 +60,8 @@ pre {
   text-align: center;
   display: inline-block;
   position: relative;
-  -webkit-box-shadow: 2px 2px grey;
-          box-shadow: 2px 2px grey;
+  -webkit-box-shadow: 2px 2px #463f3a;
+          box-shadow: 2px 2px #463f3a;
 }
 
 .btn:hover {
@@ -10652,7 +10652,7 @@ a {
 
 .presentation {
   height: 650px;
-  background: 25% 55% no-repeat url(/images/alcoholbar.jpg?3e4f65553b91de827045dbfc58bede03);
+  background: 25% 55% no-repeat url(/images/alcoholbar.jpg?112809c2db8cfc8879e3f54cc89fd456);
 }
 
 .callToAction {

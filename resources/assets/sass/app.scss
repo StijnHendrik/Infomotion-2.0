@@ -7,6 +7,7 @@
 @import "buttons";
 @import "grid";
 @import "images";
+@import "forms";
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
@@ -106,7 +107,7 @@ height: 650px;
   }
 }
 
-
+// footer section
 .page-footer{
   padding: 3% 0 0 0;
 .container{
@@ -138,3 +139,7 @@ height: 650px;
   padding: 10px 0;
   border-top:2px solid black;
 }
+
+
+//login section
+
