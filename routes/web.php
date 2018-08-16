@@ -14,5 +14,7 @@ Route::get('/home', 'HomeController@index')
 Route::get('/grid', 'PostController@grid')
     ->name('grid');
 
-Route::resource('posttypes', 'PostTypeController');
-Route::resource('posts', 'PostController');
+Route::resource('posttypes', 'PostTypeController')
+    ->middleware('auth');
+Route::resource('posts', 'PostController')
+    ->middleware('auth');
