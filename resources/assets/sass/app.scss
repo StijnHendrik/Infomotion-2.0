@@ -23,8 +23,8 @@ ul, li, a{
   height: 150px;
 }
 .logo{
-  height: 156px;
-  width: 50%;
+  height: 154px;
+  width: 45%;
 }
 .nav-link{
   font-size: 17px;
@@ -142,4 +142,29 @@ height: 650px;
 
 
 //login section
-
+.login{
+  min-height: 450px;
+  margin-top: 6%;
+  .card-body{
+    padding: 6rem 0;
+  }
+  .btn{
+    width: 234px;
+    height: 42px;
+    margin-top: 8%;
+  }
+  .col-form-label{
+    font-size: 18px;
+  }
+  input[type=checkbox]{
+    margin: 17px 0;
+  }
+  .form-check-label{
+    margin: 17px 0 0 20px;
+  }
+  .forget{
+    margin: 0 0 0 20px;
+    color:$dark-grey;
+    font-size: 12px;
+  }
+}
