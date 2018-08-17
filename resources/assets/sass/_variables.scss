@@ -2,10 +2,6 @@
 // Body
 $body-bg: #f5f8fa;
 
-// Typography
-$font-family-sans-serif: "Raleway", sans-serif;
-$font-size-base: 0.9rem;
-$line-height-base: 1.6;
 // Colors
 $dark-grey: #463f3a;
 $grey: #bcb8b1;
@@ -15,11 +11,16 @@ $darkerGreen: darken (#7fb800, 20%);
 $darkblue: #0d2c54;
 $smoothGrey: #6c757d;;
 
-// Font
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Typography
+$font-family-sans-serif: "Raleway", sans-serif;
+$font-size-base: 1.4rem;
+$line-height-base: 1.6;
 h1 {  font-size: 38px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; }
 h2 {  font-size: 30px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 22.4px; }
 h3 {  font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; }
 p {  font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; }
 blockquote {  font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; }
 pre {  font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
-

@@ -1,0 +1,52 @@
+
+// dashboard index
+
+
+.dashboard{
+  padding: 5%;
+  min-height: 600px;
+}
+
+.vertical-menu{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  li a {
+    display: block;
+    color: $darkblue;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-align: center;
+
+    &:hover {
+      background-color: $dark-grey;
+      color: white;
+    }
+  }
+  li{
+    border-bottom: 1px solid #555;
+    &:hover {
+      background-color: $dark-grey;
+
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.cta{
+
+  .btn{
+    font-size: 1.7rem !important;
+    padding: 0.75rem !important;
+    line-height: 1.6;
+    margin-right: 40px;
+  }
+}
+.col-form-label{
+  font-size: 15px;
+}
+

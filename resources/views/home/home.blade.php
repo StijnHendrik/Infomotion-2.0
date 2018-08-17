@@ -7,7 +7,7 @@
 
 
 
-                    <div class="col-md-6 callToAction">
+                    <div class="col-md-6 callToAction text-center">
                         <img src="{{URL::asset('/img/logo.png')}}" alt="logo" class=" logo-inline">
                         <h4>Your digital information in motion</h4>
                         <br>

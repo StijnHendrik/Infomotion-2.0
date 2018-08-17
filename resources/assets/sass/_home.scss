@@ -1,0 +1,70 @@
+
+.intro{
+  padding: 10% 0;
+}
+
+.landingsfoto{
+
+  height: 60%;
+}
+
+.presentation{
+  height: 650px;
+  background: 25% 55% no-repeat url(../../../public/img/alcoholbar.jpg);
+}
+.callToAction{
+  height: 74%;
+  width: 35%;
+  background-color: $grey;
+  opacity: 0.9;
+  padding: 2%;
+  margin: 4.5% 28%;
+  h4{
+    color: $dark-grey;
+    margin:0 0 25px 0;
+
+    text-align: center;
+    font-size: 22px ;
+    font-weight: bold;
+  }
+  .logo-inline{
+    width: 35%;
+  }
+  .btn-container{
+
+  }
+
+}
+
+
+.intromotion{
+  height: 500px !important;
+  padding-top: 16%;
+  margin-bottom:13%;
+  .foto{
+    height: 120%;
+  }
+  .intro-text{
+    padding-left: 10%;
+    margin: 5% 0 2% 0;
+  }
+}
+
+.features{
+  padding: 8% 20%;
+  background-color: $grey;
+  h2{
+    margin-top: 5%;
+    padding-bottom: 2%;
+  }
+  .text-main{
+    margin:1% 0 5% 0;
+    h1{
+      font-size: 5rem;
+    }
+
+  }
+  p{
+    color: white;
+  }
+}

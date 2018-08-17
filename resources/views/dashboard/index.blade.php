@@ -27,8 +27,14 @@
             <h1>Welcome to the dashboard of Infomotion</h1>
 
             <p>
-                Here you can set all the settings of 
+                Here you can set all the settings for the infomotion screen
             </p>
+
+            <div class="cta">
+                <a href="{{ route('posts.index') }}" class="btn text-uppercase">Customize your infomotion!</a>
+                <a href="{{ route('grid') }}" class="btn text-uppercase">Go to the infomotion!</a>
+
+            </div>
         </div>
     </div>
 </div>

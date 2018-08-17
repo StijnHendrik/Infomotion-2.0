@@ -1,15 +1,12 @@
-
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
-// Variables
 @import "variables";
 @import "buttons";
 @import "grid";
 @import "images";
 @import "forms";
-
-// Bootstrap
+@import "dashboard";
+@import "home";
+@import "footer";
+@import "auth";
 @import '~bootstrap/scss/bootstrap';
 
 ul, li, a{
@@ -37,181 +34,12 @@ ul, li, a{
 .nav-item{
   padding-right: 12%;
 }
-.landingsfoto{
-
-  height: 60%;
-}
-
-.presentation{
-height: 650px;
-  background: 25% 55% no-repeat url(../../../public/img/alcoholbar.jpg);
-}
-.callToAction{
-  height: 64%;
-  width: 42%;
-  background-color: $grey;
-  opacity: 0.9;
-  padding: 4%;
-  margin: 6.5% 28%;
-   h4{
-    color: $dark-grey;
-    margin:0 0 25px 0;
-
-    text-align: center;
-    font-size: 22px ;
-     font-weight: bold;
-
-  }
-}
-.row{
-  margin:0;
-  padding: 0;
-}
-.intro{
-  padding: 10% 0;
-}
-.page-footer{
-  background-color: #fff;
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
-.btn-container{
-  padding-left: 26%;
-}
-.logo-inline{
-  width: 70%;
-  padding-left:30%;
-}
-
-.intromotion{
-  height: 500px !important;
-  padding-top: 16%;
-  margin-bottom:10%;
-  .foto{
-    height: 120%;
-  }
-  .intro-text{
-    padding-left: 10%;
-    margin: 5% 0 2% 0;
-  }
-}
-
-.features{
-  padding: 8% 20%;
-  background-color: $grey;
-.text-main{
-  margin:1% 0 5% 0;
-  h1{
-    font-size: 5rem;
-  }
-}
-  p{
-    color: white;
-  }
-}
-
-// footer section
-.page-footer{
-  padding: 3% 0 0 0;
-.container{
-  padding-bottom: 3%;
-}
-  .contact-info{
-    margin: 2% 0;
-    a{
-      padding-left: 10px;
-    }
-  }
-  h1{
-    font-size: 3.25rem;
-    padding-bottom: 15px;
-    .fas{
-        padding-right: 10px;
-      }
-  }
-  a{
-    font-size: 14px;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: 400;
-    line-height: 20px;
-    color: black !important;
-  }
-}
-.rights{
-  padding: 10px 0;
-  border-top:2px solid black;
-}
-
-
-//login section
-.login{
-  min-height: 450px;
-  margin-top: 6%;
-  .card-body{
-    padding: 6rem 0;
-  }
-  .btn{
-    width: 234px;
-    height: 42px;
-    margin-top: 8%;
-  }
-  .col-form-label{
-    font-size: 18px;
-  }
-  input[type=checkbox]{
-    margin: 17px 0;
-  }
-  .form-check-label{
-    margin: 17px 0 0 20px;
-  }
-  .forget{
-    margin: 0 0 0 20px;
-    color:$dark-grey;
-    font-size: 12px;
-  }
-}
-// dashboard index
-
-
-.dashboard{
-  padding: 5%;
-  min-height: 600px;
-}
-
-.vertical-menu{
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  background-color: #f1f1f1;
-  li a {
-    display: block;
-    color: $darkblue;
-    padding: 8px 16px;
-    text-decoration: none;
-    text-align: center;
-
-    &:hover {
-      background-color: $dark-grey;
-      color: white;
-    }
-  }
-  li{
-    border-bottom: 1px solid #555;
-    &:hover {
-      background-color: $dark-grey;
-
-    }
-    &:last-child {
-      border-bottom: none;
-    }
-  }
+//.row{
+//  margin:0;
+//  padding: 0;
+//}
 
 
 
-}
 
-.col-form-label{
-  font-size: 15px;
-}
+

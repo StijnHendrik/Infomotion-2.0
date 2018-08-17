@@ -76,7 +76,7 @@
                         <div class="row form-group">
                             <label for="media" class="col-2 col-form-label">Foto:</label>
                             <div class="col-10">
-                            <input type="file" class="btn" name="media[]" id="media" multiple>
+                            <input type="file" class="button btn-secondary" name="media[]" id="media" multiple>
                             </div>
                         </div>
 
