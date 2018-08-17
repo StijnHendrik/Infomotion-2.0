@@ -35,7 +35,7 @@
 
             <div class="col-6">
                 <label for="text">Publiceren (slechts 1 publiceren per positie):</label>
-                <input type="checkbox" name="published" {{ $post->published <> '' ? 'checked' : '' }}>
+                <input type="checkbox" name="published" {{ $post->published ==  'on' ? 'checked' : '' }}>
             </div>
 
             <button type="submit">Bijwerken</button>

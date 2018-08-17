@@ -129,10 +129,10 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(StorePost $request)
+    public function edit(Request $request)
     {
-        $validated = $request->validated();
-
+//        $validated = $request->validated();
+//    return $request;
         $postTaken = $this->post
             ->where('id', '<>', $request->post_id)
             ->where('start_position_x', $request->position_x)
@@ -141,7 +141,8 @@ class PostController extends Controller
             ->where('published', '<>', '')
             ->first();
 
-        if (empty($postTaken && $request->published))
+//        return $postTaken;
+        if (empty($postTaken))
         {
             $post = $this->post->find($request->post_id);
             $post->title = $request->title;
@@ -150,9 +151,14 @@ class PostController extends Controller
             $post->end_position_x = $request->position_x;
             $post->start_position_y = $request->position_y;
             $post->end_position_y = $request->position_y;
-            $post->published = 'true';
+            if (empty($request->published))
+            {
+                $post->published = '';
+            }
+            else {
+                $post->published = $request->published;
+            }
             $post->save();
-
             return back();
         }
         else {

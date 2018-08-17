@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<script src="{{ asset('js/grid.js') }}" defer></script>
 <div class="container">
     <h1 id="grid-header">Grid</h1>
 
