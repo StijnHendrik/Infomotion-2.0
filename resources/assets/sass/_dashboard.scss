@@ -8,27 +8,30 @@
 }
 
 .vertical-menu{
+  margin-left: 19% !important;
   list-style-type: none;
-  margin: 0;
+
   padding: 0;
   width: 200px;
   background-color: #f1f1f1;
-  li a {
+  .vertical-menu-item a {
     display: block;
     color: $darkblue;
-    padding: 8px 16px;
+    padding: 14px 16px;
     text-decoration: none;
     text-align: center;
 
     &:hover {
-      background-color: $dark-grey;
+
       color: white;
     }
   }
-  li{
+  .vertical-menu-item{
+
     border-bottom: 1px solid #555;
+    border-right: 2px solid #555;
     &:hover {
-      background-color: $dark-grey;
+      background-color: $appleblue;
 
     }
     &:last-child {
@@ -38,7 +41,7 @@
 }
 
 .cta{
-
+margin-top: 10%;
   .btn{
     font-size: 1.7rem !important;
     padding: 0.75rem !important;

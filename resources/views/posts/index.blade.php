@@ -6,16 +6,16 @@
     <div class="container-fluid dashboard">
         <div class="row">
 
-            <div class="col-md-4">
+            <div class=" offset-md-2 col-md-3">
                 <ul class="vertical-menu">
 
-                    <li class="nav-item">
+                    <li class="vertical-menu-item">
                         <a class="nav-link" href="{{ route('dashboard') }}">Index</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="vertical-menu-item">
                         <a class="nav-link" href="{{ route('posts.index') }}">Posts</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="vertical-menu-item">
                         <a class="nav-link" href="{{ route('grid') }}">Grid</a>
                     </li>
                 </ul>
@@ -23,14 +23,16 @@
 
 
 
-            <div class="col-md-8">
+            <div class="col-md-7">
                 <div class=" post">
                     @if(session('error'))
                         <div class="notification-error">
                             <h2>{{ session('error') }}</h2>
                         </div>
                     @endif
-                    <h1>Posts:</h1>
+                    <h2>Posts page: On this page you can manage all your Infomotion settings</h2>
+                        <br>
+                        <br>
                     <form action="/posts" enctype="multipart/form-data" method="post" files="true" class="">
                         @csrf
                         <div class="form-group row">
@@ -81,17 +83,22 @@
                         </div>
 
 
-                        <div class="custom-control custom-radio row form-check">
+                        <div class=" custom-radio row form-check">
                             <label for="published" class="custom-control-label">
+                                <input type="radio" class="" value="1" name="published" checked>Publiceer</label>
 
-                                <input type="radio" class="custom-control-input" value="1" name="published" checked>Publiceer</label>
 
-                            <label class="form-check-label">
-                            <input type="radio" class="custom-control-input" value="0" name="published">Nog niet plaatsen</label>
+                            <label class="form-check-label" for="published1">
+                            <input type="radio" class="" value="0" name="published1">Nog niet plaatsen</label>
 
 
                         </div>
-                        <button type="submit" class="btn">Toevoegen</button>
+                        <div class="row">
+                            <div class="offset-col-md-2">
+                                <button type="submit" class="btn">Toevoegen</button>
+                            </div>
+                        </div>
+
 
                     </form>
                     <div class="row">
