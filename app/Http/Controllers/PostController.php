@@ -140,7 +140,7 @@ class PostController extends Controller
             ->where('published', 'on')
             ->first();
 
-        if (empty($postTaken))
+        if ((empty($postTaken)) || ($request->published == ""))
         {
             $post = $this->post->find($request->post_id);
             $post->title = $request->title;
