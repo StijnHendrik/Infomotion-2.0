@@ -1,4 +1,6 @@
-
+.row{
+  margin:0 !important;
+}
 .intro{
   padding: 10% 0;
 }
@@ -11,6 +13,9 @@
 .presentation{
   height: 650px;
   background: 25% 55% no-repeat url(../../../public/img/alcoholbar.jpg);
+  @media screen and  (max-width: $small) {
+margin-top: 8%;
+  }
 }
 .callToAction{
   height: 74%;
@@ -19,6 +24,13 @@
   opacity: 0.9;
   padding: 2%;
   margin: 4.5% 28%;
+  @media screen and (min-width: $large) and (max-width: $extraLarge) {
+    height: 88%;
+  }
+  @media screen and  (max-width: $small) {
+ margin: 16.5% 1%;
+    padding: 4% ;
+  }
   h4{
     color: $dark-grey;
     margin:0 0 25px 0;
@@ -29,6 +41,12 @@
   }
   .logo-inline{
     width: 35%;
+    @media screen and (min-width: $large) and (max-width: $extraLarge) {
+      width: 45%;
+    }
+    @media screen and  (max-width: $small) {
+      display: none;
+    }
   }
   .btn-container{
 
@@ -41,8 +59,20 @@
   height: 500px !important;
   padding-top: 16%;
   margin-bottom:13%;
+  @media screen and (min-width: $large) and (max-width: $extraLarge) {
+    padding-top: 11%;
+  }
+  @media screen and  (max-width: $small) {
+    padding-top: 0;
+  }
   .foto{
     height: 120%;
+    @media screen and (min-width: $large) and (max-width: $extraLarge) {
+      height: 75%;
+    }
+    @media screen and  (max-width: $small) {
+      display: none;
+    }
   }
   .intro-text{
     padding-left: 10%;
@@ -53,15 +83,28 @@
 .features{
   padding: 8% 20%;
   background-color: $grey;
+  margin-right: 0 ;
+  @media screen and (min-width: $large) and (max-width: $extraLarge) {
+    padding: 8%;
+  }
+  @media screen and  (max-width: $small) {
+    padding: 8%;
+  }
   h2{
     margin-top: 5%;
     padding-bottom: 2%;
+  }
+  .text-center{
+    @media screen and  (max-width: $small) {
+      margin-bottom: 9%;
+    }
   }
   .text-main{
     margin:1% 0 5% 0;
     h1{
       font-size: 5rem;
     }
+
 
   }
   p{

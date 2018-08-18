@@ -22,18 +22,30 @@ ul, li, a{
 .logo{
   height: 154px;
   width: 45%;
+  @media screen and (min-width: $large) and (max-width: $extraLarge) {
+    width: 50%;
+  }
+  @media screen and  (max-width: $small) {
+   width: 70%;
+    margin: 4% 15% 0 15%;
+    padding-top: 4%;
+  }
 }
 .nav-link{
   font-size: 17px;
   font-weight: 600;
   color: $grey;
+  width: 100px;
   &:hover{
     color: $dark-grey;
   }
 }
 .nav-item{
   padding-right: 15%;
-  width: 140px;
+  width: 100px;
+  &:last-child{
+    padding-left: 50px;
+  }
 }
 .error-page{
   min-height: 480px;

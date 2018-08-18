@@ -24,3 +24,9 @@ h3 {  font-size: 14px; font-style: normal; font-variant: normal; font-weight: 70
 p {  font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; }
 blockquote {  font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; }
 pre {  font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+
+// Responsive medai sizes
+$small: 480px;
+$medium: 767px;
+$large: 1023px;
+$extraLarge: 1444px;

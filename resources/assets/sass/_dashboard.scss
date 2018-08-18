@@ -8,12 +8,15 @@
 }
 
 .vertical-menu{
-  margin-left: 19% !important;
+  margin-left: 88%;
   list-style-type: none;
 
   padding: 0;
   width: 200px;
   background-color: #f1f1f1;
+  @media screen and (min-width: $large) and (max-width: $extraLarge) {
+    margin-left: 20%;
+  }
   .vertical-menu-item a {
     display: block;
     color: $darkblue;
@@ -47,9 +50,23 @@ margin-top: 10%;
     padding: 0.75rem !important;
     line-height: 1.6;
     margin-right: 40px;
+    @media screen and (min-width: $large) and (max-width: $extraLarge) {
+      font-size: 1.5rem !important;
+      float: left;
+    }
+
+    &:last-child{
+      margin-left: 20%;
+    }
   }
 }
 .col-form-label{
   font-size: 15px;
 }
 
+.dashboard-intro{
+  padding-left: 15% !important;
+  @media screen and (min-width: $extraLarge) {
+    padding-left: 15% !important;
+  }
+}
