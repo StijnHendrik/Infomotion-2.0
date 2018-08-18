@@ -3,19 +3,28 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   grid-gap: 1rem;
-  background: lightseagreen;
-  padding: 2rem;
+  padding: 1rem;
+  widows: 100vw;
+  height: 100vh;
+  margin: 0;
+
+  background: #fef9d8; background: -moz-linear-gradient(45deg,  #fef9d8 0%,#d299c2 100%); background: -webkit-linear-gradient(45deg,  #fef9d8 0%,#d299c2 100%); background: linear-gradient(45deg,  #fef9d8 0%,#d299c2 100%);
 }
 
 .grid-item {
-  margin: .1rem;
-  padding: .5rem;
-  min-height: 100%;
-  max-height: 20vh;
+  max-height: 33vh;
   overflow: hidden;
-  //height: 20vh;
-  background: mediumseagreen;
   border: 5px solid white;
+}
+
+
+.grid-item__media {
+  @extend .grid-item;
+
+  //object-fit: cover;
+  img {
+    object-fit: cover;
+  }
 }
 
 
