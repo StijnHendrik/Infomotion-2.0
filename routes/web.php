@@ -28,3 +28,5 @@ Route::resource('posts', 'PostController')
 Route::post('/updatepost', 'PostController@edit');
 Route::resource('media', 'MediaController')
     ->middleware('auth');
+Route::get('/contact', 'ContactController@contact')
+    ->name('contact');

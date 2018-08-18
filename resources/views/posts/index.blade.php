@@ -6,7 +6,7 @@
     <div class="container-fluid dashboard">
         <div class="row">
 
-            <div class=" offset-md-2 col-md-3">
+            <div class="col-md-3 col-sm-12">
                 <ul class="vertical-menu">
 
                     <li class="vertical-menu-item">
@@ -23,7 +23,7 @@
 
 
 
-            <div class="col-md-7">
+            <div class="col-md-9 col-sm-12 dashboard-intro">
                 <div class=" post">
                     @if(session('error'))
                         <div class="notification-error">
@@ -92,9 +92,10 @@
     </form>
                 </div>
             </div>
+        </div>
     <div class="row">
     @foreach($posts as $post)
-        <div class="col-3">
+        <div class="offset-4 col-3">
             <h1>{{ $post->title }}</h1>
             <p>{{ $post->text }}</p>
             <p>Positie x: {{ $post->start_position_x }} Positie y: {{ $post->start_position_y }}</p>
@@ -113,11 +114,11 @@
             <form method="post" action="/posts/{{ $post->id }}">
                 @method('delete')
                 @csrf
-                <button type="submit">Verwijder</button>
+                <button class="btn" type="submit">Verwijder</button>
             </form>
         </div>
     @endforeach
     </div>
-</div>
+
     </div>
 @endsection

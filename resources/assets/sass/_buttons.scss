@@ -13,6 +13,12 @@
   display: inline-block;
   position: relative;
   box-shadow: 2px 2px $dark-grey;
+  @media screen and (min-width: $large) and (max-width: $extraLarge) {
+    width: 250px;
+    height: 45px;
+    font-size: 1.7rem;
+    padding: 0.475rem 0.65rem !important;
+  }
   &:hover{
     background-color: transparent;
     border: 2px solid $smoothGrey;

@@ -1,7 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+
+    <div class="container-fluid dashboard">
+        <div class="row">
+
+            <div class=" offset-md-2 col-md-3">
+                <ul class="vertical-menu">
+
+                    <li class="vertical-menu-item">
+                        <a class="nav-link" href="{{ route('dashboard') }}">Index</a>
+                    </li>
+                    <li class="vertical-menu-item">
+                        <a class="nav-link" href="{{ route('posts.index') }}">Posts</a>
+                    </li>
+                    <li class="vertical-menu-item">
+                        <a class="nav-link" href="{{ route('grid') }}">Grid</a>
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <div class="col-md-7">
+                <h1>{{ $post->title }}</h1>
+                <br>
         @if(session('error'))
             <div class="row">
                 <div class="notification-error">
@@ -9,36 +32,57 @@
                 </div>
             </div>
         @endif
-        <h1>{{ $post->title }}</h1>
-        <form action="/updatepost" method="post" class="row">
+
+
+        <form action="/updatepost" method="post" >
             @csrf
-            <input type="hidden" name="post_id" value="{{ $post->id }}">
-            <div class="col-6">
-                <label for="name">Titel:</label>
-                <input type="text" name="title" value="{{ $post->title }}">
+
+            <div class="form-group row">
+                <input type="hidden" name="post_id" value="{{ $post->id }}">
+
+                <label for="title" class="col-2 col-form-label">Title:</label>
+                <div class="col-5">
+                    <input type="text" name="title" class="input-txt" value="{{ $post->title }}">
+                </div>
             </div>
 
-            <div class="col-6">
-                <label for="text">Tekst:</label>
-                <input type="text" name="text" value="{{ $post->text }}">
+            <div class="form-group row">
+
+
+                <label for="title" class="col-2 col-form-label">Text:</label>
+                <div class="col-5">
+                    <input type="text" name="title" class="input-txt" value="{{ $post->text }}">
+                </div>
             </div>
 
-            <div class="col-6">
-                <label for="text">Positie X:</label>
-                <input type="number" name="position_x" min="1" max="3" value="{{ $post->start_position_x }}">
+            <div class="form-group row">
+
+
+                <label for="title" class="col-2 col-form-label">Position X:</label>
+                <div class="col-5">
+                    <input type="text" name="title" class="input-txt" value="{{ $post->start_position_x }} ">
+                </div>
             </div>
 
-            <div class="col-6">
-                <label for="text">Positie Y:</label>
-                <input type="number" name="position_y" min="1" max="3" value="{{ $post->start_position_y }}">
+
+            <div class="form-group row">
+
+
+                <label for="title" class="col-2 col-form-label">Position Y:</label>
+                <div class="col-5">
+                    <input type="text" name="title" class="input-txt" value="{{ $post->start_position_y }} ">
+                </div>
             </div>
+
+
 
             <div class="col-6">
                 <label for="text">Publiceren (slechts 1 publiceren per positie):</label>
                 <input type="checkbox" name="published" {{ $post->published ==  'on' ? 'checked' : '' }}>
             </div>
 
-            <button type="submit">Bijwerken</button>
+
+            <button type="submit" class="btn">Adjust</button>
             </form>
             <div class="row">
             @isset($post->media)
@@ -54,13 +98,20 @@
                 @endforeach
             @endisset
             </div>
-            <div class="row">
-                <a href="{{ url('posts/'.$post->id) }}">bewerk</a>
+                <br>
+                <br>
+            <div >
+                {{--<a href="{{ url('posts/'.$post->id) }}">bewerk</a>--}}
                 <form method="post" action="/posts/{{ $post->id }}">
                     @method('delete')
                     @csrf
-                    <button type="submit">Verwijder</button>
-                </form>'
+                    <button class="btn" type="submit">Remove</button>
+                </form>
             </div>
+    </div>
+
+
+        </div>
+
     </div>
 @endsection

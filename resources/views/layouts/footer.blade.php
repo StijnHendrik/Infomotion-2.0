@@ -3,7 +3,7 @@
         <div class="row">
 
 
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-12">
                 <h1><i class="fas fa-envelope "></i>Contact</h1>
                 <ul >
                     <li class="address"><a class="contact-info" href="mailto:hello@infomotion.com">hello@infomotion
@@ -16,7 +16,7 @@
                 </ul>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4  col-sm-12">
                 <h1><i class="fas fa-thumbs-up"></i> Social</h1>
                 <ul class="fa-ul">
                     <li class="contact-info"><i class="fab fa-3x fa-facebook"></i><a
@@ -30,7 +30,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-12">
               <div class="privacy">
                   <ul>
                       <li class="contact-info">
