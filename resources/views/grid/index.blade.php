@@ -10,11 +10,10 @@
                 @isset($post->media)
                     <div class="grid-item__media" data-column-start="{{ $post->start_position_x }}" data-column-end="{{ $post->end_position_x }}" data-row-start="{{ $post->start_position_y }}" data-row-end="{{ $post->end_position_y }}">
                         @foreach($post->media as $media)
-                            <img class="slide" src="{{ url('/images/upload/').'/'.$media->source }}" alt="{{ $media->alt }}">
+                            <img class="slide" src="{{ url('/images/upload/').'/'.$media->source }}" alt="{{ $media->alt }}" data-test="{{ $loop->index }}">
                         @endforeach
                 @endisset
-
-                    </div>
+            </div>
             @else
             <div class="grid-item" data-column-start="{{ $post->start_position_x }}" data-column-end="{{ $post->end_position_x }}" data-row-start="{{ $post->start_position_y }}" data-row-end="{{ $post->end_position_y }}">
                 <div class="row">
