@@ -60,17 +60,15 @@ class PostController extends Controller
         $validated = $request->validated();
 
         $postTaken = $this->post
+            ->where('published', '=', 'on')
             ->where('start_position_x', $request->position_x)
             ->where('start_position_y', $request->position_y)
             ->where('user_id', Auth::user()->id)
-            ->where('published', '<>', '')
             ->first();
 
-
-        if (empty($postTaken))
-        {
+        if ((empty($postTaken)) || ($request->published == "")) {
             $post = $this->post->create([
-                'user_id' =>  Auth::user()->id,
+                'user_id' => Auth::user()->id,
                 'title' => $request->title,
                 'text' => $request->text,
                 'type_id' => $request->type_id,
@@ -81,17 +79,18 @@ class PostController extends Controller
                 'published' => $request->published,
             ]);
 
-            if(isset($request->media)) {
+            if (isset($request->media)) {
                 foreach ($request->file('media') as $key => $value) {
                     $this->uploadMedia($value, $request->title, $key, $post->id);
                 }
             }
-
             return back();
         }
-        else {
-            return back()->with('error', 'Er is al een post gepubliceerd op deze locatie.');
+        else
+        {
+            return back()->with('error', 'You already published a post on this location.');
         }
+
 
 
 
@@ -132,16 +131,15 @@ class PostController extends Controller
     public function edit(Request $request)
     {
 //        $validated = $request->validated();
-//    return $request;
+
         $postTaken = $this->post
             ->where('id', '<>', $request->post_id)
             ->where('start_position_x', $request->position_x)
             ->where('start_position_y', $request->position_y)
             ->where('user_id', Auth::user()->id)
-            ->where('published', '<>', '')
+            ->where('published', 'on')
             ->first();
 
-//        return $postTaken;
         if (empty($postTaken))
         {
             $post = $this->post->find($request->post_id);
@@ -162,7 +160,7 @@ class PostController extends Controller
             return back();
         }
         else {
-            return back()->with('error', 'Er is al een post gepubliceerd op deze locatie.');
+            return back()->with('error', 'You already published a post on this location.');
         }
     }
 

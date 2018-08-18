@@ -48,7 +48,6 @@
                         <input type="text" placeholder="text" name="text" class="input-txt">
                             </div>
                         </div>
-{{----}}
                         <div class="form-group row">
                         <label for="type_id" class="col-2 col-form-label">Titel:</label>
                             <div class="col-5">
@@ -59,7 +58,6 @@
                         </select>
                         </div>
                         </div>
-                            {{----}}
 
                             <div class="form-group row">
                         <label for="start_position_x" class="col-2 col-form-label">Positie X:</label>
@@ -83,18 +81,7 @@
                         </div>
 
         <label for="published">Publiceer:</label>
-        <input type="checkbox" name="published">Publiceer
-
-                        {{--<div class=" custom-radio row form-check">--}}
-                            {{--<label for="published" class="custom-control-label">--}}
-                                {{--<input type="radio" class="" value="1" name="published" checked>Publiceer</label>--}}
-
-
-                            {{--<label class="form-check-label" for="published1">--}}
-                            {{--<input type="radio" class="" value="0" name="published1">Nog niet plaatsen</label>--}}
-
-
-                        {{--</div>--}}
+        <input type="checkbox" name="published">
                         <div class="row">
                             <div class="offset-col-md-2">
                                 <button type="submit" class="btn">Toevoegen</button>
