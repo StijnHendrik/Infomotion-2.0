@@ -33,8 +33,7 @@
         <input type="file" name="media[]" id="media" multiple>
 
         <label for="published">Publiceer:</label>
-        <input type="radio" value="true" name="published" checked>Publiceer
-        <input type="radio" value="" name="published">Nog niet plaatsen
+        <input type="checkbox" name="published">Publiceer
 
 
         <button type="submit">Toevoegen</button>

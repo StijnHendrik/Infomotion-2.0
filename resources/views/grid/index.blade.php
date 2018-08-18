@@ -37,4 +37,5 @@
     </div>
     </div>
 </div>
+<script src="{{ asset('js/grid.js') }}" defer></script>
 @endsection
