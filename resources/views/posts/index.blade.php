@@ -85,16 +85,16 @@
         <label for="published">Publiceer:</label>
         <input type="checkbox" name="published">Publiceer
 
-                        <div class=" custom-radio row form-check">
-                            <label for="published" class="custom-control-label">
-                                <input type="radio" class="" value="1" name="published" checked>Publiceer</label>
+                        {{--<div class=" custom-radio row form-check">--}}
+                            {{--<label for="published" class="custom-control-label">--}}
+                                {{--<input type="radio" class="" value="1" name="published" checked>Publiceer</label>--}}
 
 
-                            <label class="form-check-label" for="published1">
-                            <input type="radio" class="" value="0" name="published1">Nog niet plaatsen</label>
+                            {{--<label class="form-check-label" for="published1">--}}
+                            {{--<input type="radio" class="" value="0" name="published1">Nog niet plaatsen</label>--}}
 
 
-                        </div>
+                        {{--</div>--}}
                         <div class="row">
                             <div class="offset-col-md-2">
                                 <button type="submit" class="btn">Toevoegen</button>
@@ -103,6 +103,8 @@
 
 
     </form>
+                </div>
+            </div>
     <div class="row">
     @foreach($posts as $post)
         <div class="col-3">
@@ -130,4 +132,5 @@
     @endforeach
     </div>
 </div>
+    </div>
 @endsection
