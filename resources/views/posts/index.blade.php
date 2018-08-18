@@ -87,37 +87,35 @@
                                 <button type="submit" class="btn">Toevoegen</button>
                             </div>
                         </div>
-
-
-    </form>
+                    </form>
                 </div>
             </div>
         </div>
     <div class="row">
-    @foreach($posts as $post)
-        <div class="offset-4 col-3">
-            <h1>{{ $post->title }}</h1>
-            <p>{{ $post->text }}</p>
-            <p>Positie x: {{ $post->start_position_x }} Positie y: {{ $post->start_position_y }}</p>
-            <p>{{ $post->published }}</p>
-            @isset($post->media)
-                @foreach($post->media as $media)
-                <img src="{{ url('/images/upload/').'/'.$media->source }}" alt="{{ $media->alt }}" width="200px">
-                <form method="post" action="/media/{{ $media->id }}">
-                    @method('delete')
-                    @csrf
-                    <button type="submit">Verwijder afbeelding</button>
-                </form>
+        <div class="table-responsive offset-3">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Published</th>
+                    <th scope="col">Content</th>
+                    <th scope="col">Position X:Y</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($posts as $post)
+                    <tr>
+                        <th scope="row">{{ $loop->index }}</th>
+                        <td>{{ $post->title }}</td>
+                        <td>{{ $post->published == 'on' ? 'published' : 'unpublished' }}</td>
+                        <td>{{ $post->text }}</td>
+                        <td><strong>X: {{ $post->start_position_x.' | Y: '.$post->start_position_y }}</strong></td>
+                    </tr>
                 @endforeach
-            @endisset
-            <a href="{{ url('posts/'.$post->id) }}">bewerk</a>
-            <form method="post" action="/posts/{{ $post->id }}">
-                @method('delete')
-                @csrf
-                <button class="btn" type="submit">Verwijder</button>
-            </form>
+                </tbody>
+            </table>
         </div>
-    @endforeach
     </div>
 
     </div>
