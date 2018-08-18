@@ -33,7 +33,8 @@ class CreatePostsTable extends Migration
             $table->integer('start_position_y');
             $table->integer('end_position_y')
                 ->nullable();
-            $table->boolean('published');
+            $table->string('published')
+                ->nullable();
             $table->timestamps();
         });
     }

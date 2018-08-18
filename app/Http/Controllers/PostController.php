@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
-
+use App\Http\Requests\StorePost;
 use App\Post_type;
 use App\Media;
 use Auth;
@@ -55,13 +55,18 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePost $request)
     {
+        $validated = $request->validated();
+
         $postTaken = $this->post
             ->where('start_position_x', $request->position_x)
             ->where('start_position_y', $request->position_y)
-            ->where('published', 1)
-            ->get();
+            ->where('user_id', Auth::user()->id)
+            ->where('published', '<>', '')
+            ->first();
+
+
         if (empty($postTaken))
         {
             $post = $this->post->create([
@@ -124,9 +129,41 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        //
+//        $validated = $request->validated();
+//    return $request;
+        $postTaken = $this->post
+            ->where('id', '<>', $request->post_id)
+            ->where('start_position_x', $request->position_x)
+            ->where('start_position_y', $request->position_y)
+            ->where('user_id', Auth::user()->id)
+            ->where('published', '<>', '')
+            ->first();
+
+//        return $postTaken;
+        if (empty($postTaken))
+        {
+            $post = $this->post->find($request->post_id);
+            $post->title = $request->title;
+            $post->text = $request->text;
+            $post->start_position_x = $request->position_x;
+            $post->end_position_x = $request->position_x;
+            $post->start_position_y = $request->position_y;
+            $post->end_position_y = $request->position_y;
+            if (empty($request->published))
+            {
+                $post->published = '';
+            }
+            else {
+                $post->published = $request->published;
+            }
+            $post->save();
+            return back();
+        }
+        else {
+            return back()->with('error', 'Er is al een post gepubliceerd op deze locatie.');
+        }
     }
 
     /**
@@ -159,7 +196,7 @@ class PostController extends Controller
     {
         return view(
             'grid.index',
-            ['posts' => $this->post->where('published',1)->get()]
+            ['posts' => $this->post->where('published', '<>', '')->get()]
         );
     }
 

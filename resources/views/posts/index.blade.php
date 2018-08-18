@@ -82,6 +82,8 @@
                             </div>
                         </div>
 
+        <label for="published">Publiceer:</label>
+        <input type="checkbox" name="published">Publiceer
 
                         <div class=" custom-radio row form-check">
                             <label for="published" class="custom-control-label">
@@ -100,35 +102,32 @@
                         </div>
 
 
-                    </form>
-                    <div class="row">
-                        @foreach($posts as $post)
-                            <div class="col-3">
-                                <h1>{{ $post->title }}</h1>
-                                <p>{{ $post->text }}</p>
-                                <p>Positie x: {{ $post->start_position_x }} Positie y: {{ $post->start_position_y }}</p>
-                                <p>{{ $post->published }}</p>
-                                @isset($post->media)
-                                @foreach($post->media as $media)
-                                    <img src="{{ url('/images/upload/').'/'.$media->source }}" alt="{{ $media->alt }}" width="200px">
-                                    <form method="post" action="/media/{{ $media->id }}">
-                                        @method('delete')
-                                        @csrf
-                                        <button type="submit">Verwijder afbeelding</button>
-                                    </form>
-                                @endforeach
-                                @endisset
-                                <form method="post" action="/posts/{{ $post->id }}">
-                                    @method('delete')
-                                    @csrf
-                                    <button type="submit">Verwijder</button>
-                                </form>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
+    </form>
+    <div class="row">
+    @foreach($posts as $post)
+        <div class="col-3">
+            <h1>{{ $post->title }}</h1>
+            <p>{{ $post->text }}</p>
+            <p>Positie x: {{ $post->start_position_x }} Positie y: {{ $post->start_position_y }}</p>
+            <p>{{ $post->published }}</p>
+            @isset($post->media)
+                @foreach($post->media as $media)
+                <img src="{{ url('/images/upload/').'/'.$media->source }}" alt="{{ $media->alt }}" width="200px">
+                <form method="post" action="/media/{{ $media->id }}">
+                    @method('delete')
+                    @csrf
+                    <button type="submit">Verwijder afbeelding</button>
+                </form>
+                @endforeach
+            @endisset
+            <a href="{{ url('posts/'.$post->id) }}">bewerk</a>
+            <form method="post" action="/posts/{{ $post->id }}">
+                @method('delete')
+                @csrf
+                <button type="submit">Verwijder</button>
+            </form>
         </div>
+    @endforeach
     </div>
-
+</div>
 @endsection
