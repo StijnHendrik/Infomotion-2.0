@@ -1,0 +1,55 @@
+
+// dashboard index
+
+
+.dashboard{
+  padding: 5%;
+  min-height: 600px;
+}
+
+.vertical-menu{
+  margin-left: 19% !important;
+  list-style-type: none;
+
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  .vertical-menu-item a {
+    display: block;
+    color: $darkblue;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-align: center;
+
+    &:hover {
+
+      color: white;
+    }
+  }
+  .vertical-menu-item{
+
+    border-bottom: 1px solid #555;
+    border-right: 2px solid #555;
+    &:hover {
+      background-color: $appleblue;
+
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.cta{
+margin-top: 10%;
+  .btn{
+    font-size: 1.7rem !important;
+    padding: 0.75rem !important;
+    line-height: 1.6;
+    margin-right: 40px;
+  }
+}
+.col-form-label{
+  font-size: 15px;
+}
+

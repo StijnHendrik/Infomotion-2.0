@@ -1,0 +1,38 @@
+
+// footer section
+.page-footer{
+
+    background-color: #fff;
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+
+  padding: 3% 0 0 0;
+  .container{
+    padding-bottom: 3%;
+  }
+  .contact-info{
+    margin: 2% 0;
+    a{
+      padding-left: 10px;
+    }
+  }
+  h1{
+    font-size: 3.25rem;
+    padding-bottom: 15px;
+    .fas{
+      padding-right: 10px;
+    }
+  }
+  a{
+    font-size: 14px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 20px;
+    color: black !important;
+  }
+}
+.rights{
+  padding: 10px 0;
+  border-top:2px solid black;
+}

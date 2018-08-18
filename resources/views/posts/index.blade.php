@@ -1,44 +1,110 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    @if(session('error'))
-        <div class="notification-error">
-            <h2>{{ session('error') }}</h2>
-        </div>
-    @endif
-    <h1>Posts:</h1>
-    <form action="/posts" enctype="multipart/form-data" method="post" files="true">
-        @csrf
-        <label for="title">Titel:</label>
-        <input type="text" placeholder="title" name="title">
 
-        <label for="text">Tekst:</label>
-        <input type="text" placeholder="text" name="text">
 
-        <label for="type_id">Titel:</label>
-        <select name="type_id">
-            @foreach($post_types as $post_type)
-                <option value="{{ $post_type->id }}">{{ $post_type->type }}</option>
-            @endforeach
-        </select>
+    <div class="container-fluid dashboard">
+        <div class="row">
 
-        <label for="start_position_x">Positie X:</label>
-        <input type="number" min="1" max="3" name="position_x" value="1">
+            <div class=" offset-md-2 col-md-3">
+                <ul class="vertical-menu">
 
-        <label for="start_position_y">Positie Y:</label>
-        <input type="number" min="1" max="3" name="position_y" value="1">
+                    <li class="vertical-menu-item">
+                        <a class="nav-link" href="{{ route('dashboard') }}">Index</a>
+                    </li>
+                    <li class="vertical-menu-item">
+                        <a class="nav-link" href="{{ route('posts.index') }}">Posts</a>
+                    </li>
+                    <li class="vertical-menu-item">
+                        <a class="nav-link" href="{{ route('grid') }}">Grid</a>
+                    </li>
+                </ul>
+            </div>
 
-        <label for="media">Foto:</label>
-        <input type="file" name="media[]" id="media" multiple>
+
+
+            <div class="col-md-7">
+                <div class=" post">
+                    @if(session('error'))
+                        <div class="notification-error">
+                            <h2>{{ session('error') }}</h2>
+                        </div>
+                    @endif
+                    <h2>Posts page: On this page you can manage all your Infomotion settings</h2>
+                        <br>
+                        <br>
+                    <form action="/posts" enctype="multipart/form-data" method="post" files="true" class="">
+                        @csrf
+                        <div class="form-group row">
+                        <label for="title" class="col-2 col-form-label">Titel:</label>
+                            <div class="col-5">
+                        <input type="text" placeholder="title" name="title" class="input-txt">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                        <label for="text" class="col-2 col-form-label">Tekst:</label>
+                            <div class="col-5">
+                        <input type="text" placeholder="text" name="text" class="input-txt">
+                            </div>
+                        </div>
+{{----}}
+                        <div class="form-group row">
+                        <label for="type_id" class="col-2 col-form-label">Titel:</label>
+                            <div class="col-5">
+                        <select name="type_id" class="input-txt">
+                            @foreach($post_types as $post_type)
+                                <option value="{{ $post_type->id }}">{{ $post_type->type }}</option>
+                            @endforeach
+                        </select>
+                        </div>
+                        </div>
+                            {{----}}
+
+                            <div class="form-group row">
+                        <label for="start_position_x" class="col-2 col-form-label">Positie X:</label>
+                                <div class="col-5">
+                        <input type="number" min="1" max="3" name="position_x" value="1" class="input-txt">
+                            </div>
+                            </div>
+                        <div class="row form-group">
+
+                            <label for="start_position_y" class="col-2 col-form-label">Positie Y:</label>
+                            <div class="col-5">
+                            <input type="number" min="1" max="3" name="position_y" value="1" class="input-txt">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <label for="media" class="col-2 col-form-label">Foto:</label>
+                            <div class="col-10">
+                            <input type="file" class="button btn-secondary" name="media[]" id="media" multiple>
+                            </div>
+                        </div>
 
         <label for="published">Publiceer:</label>
         <input type="checkbox" name="published">Publiceer
 
+                        {{--<div class=" custom-radio row form-check">--}}
+                            {{--<label for="published" class="custom-control-label">--}}
+                                {{--<input type="radio" class="" value="1" name="published" checked>Publiceer</label>--}}
 
-        <button type="submit">Toevoegen</button>
+
+                            {{--<label class="form-check-label" for="published1">--}}
+                            {{--<input type="radio" class="" value="0" name="published1">Nog niet plaatsen</label>--}}
+
+
+                        {{--</div>--}}
+                        <div class="row">
+                            <div class="offset-col-md-2">
+                                <button type="submit" class="btn">Toevoegen</button>
+                            </div>
+                        </div>
+
 
     </form>
+                </div>
+            </div>
     <div class="row">
     @foreach($posts as $post)
         <div class="col-3">
@@ -66,4 +132,5 @@
     @endforeach
     </div>
 </div>
+    </div>
 @endsection
