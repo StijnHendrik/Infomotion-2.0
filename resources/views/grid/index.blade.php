@@ -46,13 +46,36 @@
                     </div>
                 @endisset
                 </div>
+            @elseif($post->posttype->type == 'menu')
+                <div class="grid-item {{$post->posttype->type}}" data-column-start="{{ $post->start_position_x }}" data-column-end="{{ $post->end_position_x }}" data-row-start="{{ $post->start_position_y }}" data-row-end="{{ $post->end_position_y }}">
+                    <div class="row">
+                        <div class="col">
+                            <h1>{{ $post->title }}</h1>
+
+                                    <h4 class="menu-inline">{{ $post->text }}</h4>
+
+
+                        </div>
+                    </div>
+                </div>
+            @elseif($post->posttype->type == 'quote')
+                <div class="grid-item {{$post->posttype->type}}" data-column-start="{{ $post->start_position_x }}" data-column-end="{{ $post->end_position_x }}" data-row-start="{{ $post->start_position_y }}" data-row-end="{{ $post->end_position_y }}">
+                    <div class="row">
+                        <div class="col">
+
+                            <h2 >{{ $post->text }}</h2>
+                            <p>{{ $post->title }}</p>
+
+                        </div>
+                    </div>
+                </div>
             @else
             <div class="grid-item {{$post->posttype->type}}" data-column-start="{{ $post->start_position_x }}" data-column-end="{{ $post->end_position_x }}" data-row-start="{{ $post->start_position_y }}" data-row-end="{{ $post->end_position_y }}">
                 <div class="row">
                     <div class="col">
-                        {{ $post->title }}
-                        {{ $post->posttype->type }}
-                        <p>{{ $post->text }}</p>
+                       <h1>{{ $post->title }}</h1>
+
+                        <p >{{ $post->text }}</p>
                     </div>
                 </div>
             </div>

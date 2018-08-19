@@ -24,7 +24,15 @@ h3 {  font-size: 14px; font-style: normal; font-variant: normal; font-weight: 70
 p {  font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; }
 blockquote {  font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; }
 pre {  font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
-
+//@font-face {
+//  font-family: 'chalk';
+//  src: url(../../../public/fonts/chalk.ttf) format("truetype");
+//}
+//@font-face {
+//  font-family: 'chalker';
+//  src: url(../../../public/fonts/chalker.otf) format("opentype") ;
+//}
+//@include font-face(chalker, ../fonts/chalker.otf);
 // Responsive medai sizes
 $small: 480px;
 $medium: 767px;
