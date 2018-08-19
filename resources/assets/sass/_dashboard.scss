@@ -8,7 +8,7 @@
 }
 
 .vertical-menu{
-  margin-left: 88%;
+  margin-left: 65%;
   list-style-type: none;
 
   padding: 0;
@@ -23,17 +23,16 @@
   .vertical-menu-item a {
     display: block;
     color: $darkblue;
-    padding: 14px 16px;
+    padding: 14px 78px;
     text-decoration: none;
-    text-align: center;
-
+    width: 100px;
     &:hover {
 
       color: white;
     }
   }
   .vertical-menu-item{
-
+cursor: pointer;
     border-bottom: 1px solid #555;
     border-right: 2px solid #555;
     &:hover {
@@ -72,8 +71,20 @@ margin-top: 10%;
 }
 
 .dashboard-intro{
-  padding-left: 15% !important;
+  margin-left: 4%;
   @media screen and (min-width: $extraLarge) {
-    padding-left: 15% !important;
+   // padding-left: 15% !important;
   }
+  input[type=number]{
+    margin: 2% 0;
+  }
+}
+
+.overview{
+
+  margin: 5% 15% 2% 15%;
+}
+
+.edit{
+  color: $appleblue;
 }
