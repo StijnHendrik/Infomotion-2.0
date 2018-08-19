@@ -34,7 +34,7 @@
 <div id="app">
     <div id="grid" class="grid">
         @foreach($posts as $post)
-            @if($post->type = 'media')
+            @if($post->posttype->type == 'media')
                 <div class="grid-item grid-item__media carousel" data-ride="carousel" data-column-start="{{ $post->start_position_x }}" data-column-end="{{ $post->end_position_x }}" data-row-start="{{ $post->start_position_y }}" data-row-end="{{ $post->end_position_y }}">
                 @isset($post->media)
                     <div class="carousel-inner">
@@ -50,18 +50,10 @@
             <div class="grid-item" data-column-start="{{ $post->start_position_x }}" data-column-end="{{ $post->end_position_x }}" data-row-start="{{ $post->start_position_y }}" data-row-end="{{ $post->end_position_y }}">
                 <div class="row">
                     <div class="col">
-                    {{ $post->title }}
+                        {{ $post->title }}
+                        {{ $post->posttype->type }}
                     </div>
                 </div>
-                @isset($post->media)
-                    <div class="row">
-                    @foreach($post->media as $media)
-                        <div class="col">
-                            <img src="{{ url('/images/upload/').'/'.$media->source }}" alt="{{ $media->alt }}" width="20%">
-                        </div>
-                    @endforeach
-                    </div>
-                @endisset
             </div>
             @endif
         @endforeach
