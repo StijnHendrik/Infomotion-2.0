@@ -77,27 +77,32 @@ module.exports = __webpack_require__(45);
 /***/ (function(module, exports) {
 
 var slideIndex = 0;
-var slide = document.getElementsByClassName('slide');
+var counter = 0;
+// var item__media = document.getElementsByClassName('grid-item__media')
 window.onload = function () {
-
     setInterval(function () {
         slideshow();
-    }, 1000);
+    }, 500);
 };
 
 window.slideshow = function () {
-    var slide = document.getElementsByClassName('slide');
+    var item__media = document.getElementsByClassName('grid-item__media');
+
+    var media = item__media[slideIndex].getElementsByClassName('slide');
+    for (var j = 0; j < media.length; j++) {
+        console.log(media[j].dataset.test);
+        media[j].style.display = "none";
+    }
+
+    if (counter >= media.length) {
+        counter = 0;
+    }
+    media[counter].style.display = "block";
+    counter++;
     slideIndex++;
-    for (var i = 0; i < slide.length; i++) {
-        slide[i].style.display = "none";
+    if (slideIndex > item__media.length) {
+        slideIndex = 0;
     }
-
-    if (slideIndex > slide.length) {
-        slideIndex = 1;
-    }
-
-    slide[slideIndex - 1].style.display = "block";
-    console.log(slide[slideIndex - 1]);
 };
 
 /***/ })
