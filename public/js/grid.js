@@ -79,11 +79,9 @@ module.exports = __webpack_require__(45);
 var slideIndex = 0;
 var counter = 0;
 // var item__media = document.getElementsByClassName('grid-item__media')
-window.onload = function () {
-    setInterval(function () {
-        slideshow();
-    }, 500);
-};
+window.onload = function () {}
+//  setInterval(function () {slideshow ()},500)
+
 
 // window.slideshow = function () {
 //     var item__media = document.getElementsByClassName('grid-item__media')
@@ -104,6 +102,7 @@ window.onload = function () {
 //         slideIndex = 0
 //     }
 // }
+;
 
 /***/ })
 

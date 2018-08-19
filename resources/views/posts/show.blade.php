@@ -5,7 +5,7 @@
     <div class="container-fluid dashboard">
         <div class="row">
 
-            <div class=" offset-md-2 col-md-3">
+            <div class="col-md-4">
                 <ul class="vertical-menu">
 
                     <li class="vertical-menu-item">
@@ -51,7 +51,7 @@
 
                 <label for="title" class="col-2 col-form-label">Text:</label>
                 <div class="col-5">
-                    <input type="text" name="title" class="input-txt" value="{{ $post->text }}">
+                    <input type="text" name="text" class="input-txt" value="{{ $post->text }}">
                 </div>
             </div>
 
@@ -60,7 +60,7 @@
 
                 <label for="title" class="col-2 col-form-label">Position X:</label>
                 <div class="col-5">
-                    <input type="text" name="title" class="input-txt" value="{{ $post->start_position_x }} ">
+                    <input type="text" name="position_x" class="input-txt" value="{{ $post->start_position_x }} ">
                 </div>
             </div>
 
@@ -70,7 +70,7 @@
 
                 <label for="title" class="col-2 col-form-label">Position Y:</label>
                 <div class="col-5">
-                    <input type="text" name="title" class="input-txt" value="{{ $post->start_position_y }} ">
+                    <input type="text" name="position_y" class="input-txt" value="{{ $post->start_position_y }} ">
                 </div>
             </div>
 

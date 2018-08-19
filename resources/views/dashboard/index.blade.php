@@ -4,7 +4,7 @@
 <div class="container-fluid dashboard">
     <div class="row">
 
-        <div class=" col-md-3 col-sm-12">
+        <div class=" col-md-4 col-sm-12">
 <ul class="vertical-menu">
 
     <li class="vertical-menu-item">
@@ -21,7 +21,7 @@
 
 
 
-        <div class="col-md-8 col-sm-12 dashboard-intro">
+        <div class="col-md-7 col-sm-12 dashboard-intro">
 
 
             <h1>Welcome to the dashboard of Infomotion</h1>

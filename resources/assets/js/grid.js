@@ -2,7 +2,7 @@ var slideIndex = 0
 var counter = 0
 // var item__media = document.getElementsByClassName('grid-item__media')
 window.onload = function () {
-    setInterval(function () {slideshow ()},500)
+  //  setInterval(function () {slideshow ()},500)
 }
 
 // window.slideshow = function () {

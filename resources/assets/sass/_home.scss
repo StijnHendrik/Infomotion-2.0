@@ -27,6 +27,10 @@ margin-top: 8%;
   @media screen and (min-width: $large) and (max-width: $extraLarge) {
     height: 88%;
   }
+  @media screen and (min-width: $medium) and (max-width: $large) {
+   height: 75%;
+    margin: 16% 28% 4% 28%;
+  }
   @media screen and  (max-width: $small) {
  margin: 16.5% 1%;
     padding: 4% ;
@@ -43,6 +47,9 @@ margin-top: 8%;
     width: 35%;
     @media screen and (min-width: $large) and (max-width: $extraLarge) {
       width: 45%;
+    }
+    @media screen and (min-width: $medium) and (max-width: $large) {
+      display: none;
     }
     @media screen and  (max-width: $small) {
       display: none;
@@ -62,13 +69,20 @@ margin-top: 8%;
   @media screen and (min-width: $large) and (max-width: $extraLarge) {
     padding-top: 11%;
   }
+  @media screen and (min-width: $medium) and (max-width: $large) {
+    margin-bottom: 13% !important;
+  }
   @media screen and  (max-width: $small) {
     padding-top: 0;
   }
   .foto{
-    height: 120%;
+    height: 100%;
     @media screen and (min-width: $large) and (max-width: $extraLarge) {
       height: 75%;
+    }
+    @media screen and (min-width: $medium) and (max-width: $large) {
+      height: 68%;
+      margin-top: 8%;
     }
     @media screen and  (max-width: $small) {
       display: none;
@@ -76,7 +90,16 @@ margin-top: 8%;
   }
   .intro-text{
     padding-left: 10%;
-    margin: 5% 0 2% 0;
+    margin: 3% 0 2% 0;
+    @media screen and (min-width: $medium) and (max-width: $large) {
+      padding-left: 6%;
+    }
+    h1{
+      @media screen and (min-width: $medium) and (max-width: $large) {
+        font-size: 2.8rem;
+      }
+    }
+
   }
 }
 
@@ -85,6 +108,9 @@ margin-top: 8%;
   background-color: $grey;
   margin-right: 0 ;
   @media screen and (min-width: $large) and (max-width: $extraLarge) {
+    padding: 8%;
+  }
+  @media screen and (min-width: $medium) and (max-width: $large) {
     padding: 8%;
   }
   @media screen and  (max-width: $small) {
@@ -97,6 +123,16 @@ margin-top: 8%;
   .text-center{
     @media screen and  (max-width: $small) {
       margin-bottom: 9%;
+    }
+    a.btn{
+      &:first-child{
+        @media screen and (min-width: $medium) and (max-width: $large) {
+          display: none;
+        }
+      }
+      &:last-child{
+        display: none;
+      }
     }
   }
   .text-main{
