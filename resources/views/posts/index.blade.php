@@ -106,7 +106,7 @@
                     <th scope="col">Title</th>
                     <th scope="col">Published</th>
                     <th scope="col">Content</th>
-
+                    <th scope="col">Type</th>
                     <th scope="col">Position X:Y</th>
                 </tr>
                 </thead>
@@ -117,7 +117,7 @@
                         <td>{{ $post->title }}</td>
                         <td>{{ $post->published == 'on' ? 'published' : 'unpublished' }}</td>
                         <td>{{ $post->text }}</td>
-
+<td>  {{ $post->posttype->type }}</td>
                         <td><strong>X: {{ $post->start_position_x.' | Y: '.$post->start_position_y }}</strong></td>
                     <td><a  href="{{ url('posts/'.$post->id) }}"><i class="edit fas fa-edit"></i></a></td>
                         <td>
