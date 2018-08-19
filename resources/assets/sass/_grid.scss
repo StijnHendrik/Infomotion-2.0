@@ -1,3 +1,10 @@
+@import "variables";
+@import url("https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Handlee:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Great+Vibes:300,400,600");
+$shadow: 'Shadow', serif;
+$handlee: 'Handlee', serif;
+$Chalky: 'Great Vibes', serif;
 #grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -7,7 +14,7 @@
   height: 100vh;
   margin: 0;
 
-  background: #fef9d8; background: -moz-linear-gradient(45deg,  #fef9d8 0%,#d299c2 100%); background: -webkit-linear-gradient(45deg,  #fef9d8 0%,#d299c2 100%); background: linear-gradient(45deg,  #fef9d8 0%,#d299c2 100%);
+  background:  #ccc;
 }
 
 .grid-item {
@@ -29,10 +36,12 @@
 
 // quote
 .quote{
-  background: #f9f9f9;
+
   border-left: 10px solid #ccc;
-  margin: 2em 10px;
+  margin: 0 10px;
   padding: 1em 10px;
+  background: #e6a27f;
+
   &:before{
     color: #ccc;
     content: open-quote;
@@ -41,11 +50,69 @@
     margin-right: 0.25em;
     vertical-align: -0.4em;
   }
+  &:after{
+    color: #ccc;
+    content: close-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
   .col{
     display: inline;
+    padding: 5%;
+
+  }
+  h1, p{
+    text-align: center;
+    line-height: normal;
+
+    font-family: $shadow;
+color: white;
+  }
+  p{
+    font-size: 21px;
+    line-height: 27px;
+    text-shadow: 2px 2px 2px #7E5946;
   }
 }
+// Text
+.text, .menu{
+  padding: 1em 10px;
+  text-align: center;
+}
+.text{
+  background: #F2C14E; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #F2C14E, #F78154); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #F2C14E, #F78154); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #F2C14E, #F78154); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #F2C14E, #F78154); /* Standard syntax */
+}
+.text h1{
+  padding-top: 5%;
+}
+.text p{
+ padding: 5% 20%;
+  font-size: 16px;
+  font-weight: 500;
+}
+// Menu
 
+.menu{
+  background-image: url("../../../public/img/backgound1.jpg");
+}
+.menu h1{
+  text-decoration: underline ;
+  font-family: $Chalky;
+  color: white !important;
+  font-size: 5rem;
+}
+.menu-inline{
+padding: 1% 0;
+  font-family: $handlee;
+  color: white !important;
+  font-size: 2.9rem;
+}
 // COLUMN START
 
 .grid-item[data-column-start="1"] {
