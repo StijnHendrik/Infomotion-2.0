@@ -47,7 +47,7 @@
                 @endisset
                 </div>
             @else
-            <div class="grid-item" data-column-start="{{ $post->start_position_x }}" data-column-end="{{ $post->end_position_x }}" data-row-start="{{ $post->start_position_y }}" data-row-end="{{ $post->end_position_y }}">
+            <div class="grid-item {{$post->posttype->type}}" data-column-start="{{ $post->start_position_x }}" data-column-end="{{ $post->end_position_x }}" data-row-start="{{ $post->start_position_y }}" data-row-end="{{ $post->end_position_y }}">
                 <div class="row">
                     <div class="col">
                         {{ $post->title }}

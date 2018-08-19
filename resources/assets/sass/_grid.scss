@@ -31,8 +31,8 @@
 .quote{
   background: #f9f9f9;
   border-left: 10px solid #ccc;
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
+  margin: 2em 10px;
+  padding: 1em 10px;
   &:before{
     color: #ccc;
     content: open-quote;
@@ -41,7 +41,7 @@
     margin-right: 0.25em;
     vertical-align: -0.4em;
   }
-  p{
+  .col{
     display: inline;
   }
 }
