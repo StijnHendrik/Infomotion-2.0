@@ -24,7 +24,8 @@ class StorePost extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|string|',
+            'title' => 'required|string|max:190',
+            'text' => 'max:500',
             'type_id' => 'integer|present',
             'media1.*' => 'file|image|max:1000',
         ];

@@ -52,6 +52,7 @@
                     <div class="col">
                         {{ $post->title }}
                         {{ $post->posttype->type }}
+                        <p>{{ $post->text }}</p>
                     </div>
                 </div>
             </div>

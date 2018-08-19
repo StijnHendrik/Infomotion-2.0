@@ -21,7 +21,7 @@ class CreatePostsTable extends Migration
                 ->on('users')
                 ->onDelete('cascade');
             $table->string('title');
-            $table->string('text')
+            $table->longText('text')
                 ->nullable();
             $table->integer('type_id')
                 ->references('id')
