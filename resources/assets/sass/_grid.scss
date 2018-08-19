@@ -3,8 +3,7 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   grid-gap: 1rem;
-  padding: 1rem;
-  widows: 100vw;
+  padding: .5rem;
   height: 100vh;
   margin: 0;
 
@@ -12,7 +11,7 @@
 }
 
 .grid-item {
-  max-height: 33vh;
+  height: 32vh;
   overflow: hidden;
   border: 5px solid white;
 }
@@ -24,6 +23,7 @@
   //object-fit: cover;
   img {
     object-fit: cover;
+    height: 32vh;
   }
 }
 
