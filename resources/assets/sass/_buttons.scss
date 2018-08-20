@@ -5,8 +5,8 @@
   background-color: $smoothGrey;
   border-radius: 8px;
   color: #fff;
-  padding: 0.675rem 0.75rem !important;
-  font-size: 1.9rem !important;
+  padding: 0.675rem 0.75rem ;
+  font-size: 1.9rem ;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
@@ -17,7 +17,13 @@
     width: 250px;
     height: 45px;
     font-size: 1.7rem;
-    padding: 0.475rem 0.65rem !important;
+    padding: 0.475rem 0.65rem ;
+  }
+  @media screen and  (max-width: $small) {
+    font-size: 1.4rem ;
+    padding: 0.475rem 0.65rem ;
+    width: 250px;
+    height: 45px;
   }
   &:hover{
     background-color: transparent;
