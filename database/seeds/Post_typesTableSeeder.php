@@ -11,8 +11,23 @@ class Post_typesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Post_type::class, 5)->create()->each(function ($u) {
-            $u->post_types()->save(factory(App\Post_type::class)->make());
-        });
+//        factory(App\Post_type::class, 5)->create()->each(function ($u) {
+//            $u->post_types()->save(factory(App\Post_type::class)->make());
+//        });
+
+        DB::table('post_types')->insert([
+            [
+                'type' => 'media'
+            ],
+            [
+                'type' => 'text'
+            ],
+            [
+                'type' => 'quote'
+            ],
+            [
+                'type' => 'menu'
+            ]
+        ]);
     }
 }
