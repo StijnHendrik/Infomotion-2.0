@@ -20,6 +20,9 @@
   @media screen and (min-width: $medium) and (max-width: $large) {
     margin-left: 8%;
   }
+  @media screen and  (max-width: $small) {
+    margin-left: 5%;
+  }
   .vertical-menu-item a {
     display: block;
     color: $darkblue;
@@ -48,10 +51,14 @@ cursor: pointer;
 .cta{
 margin-top: 10%;
   .btn{
-    font-size: 1.7rem !important;
+    font-size: 1.7rem ;
     padding: 0.75rem !important;
     line-height: 1.6;
     margin-right: 40px;
+    @media screen and  (max-width: $small) {
+      margin-right: 0;
+      font-size: 1.4rem ;
+    }
     @media screen and (min-width: $large) and (max-width: $extraLarge) {
       font-size: 1.5rem !important;
       float: left;
@@ -62,6 +69,10 @@ margin-top: 10%;
       @media screen and (min-width: $medium) and (max-width: $large) {
         margin-left: 0;
         margin-top: 5%;
+      }
+      @media screen and  (max-width: $small) {
+        margin-top: 4%;
+        margin-left: 0;
       }
     }
   }
@@ -87,4 +98,7 @@ margin-top: 10%;
 
 .edit{
   color: $appleblue;
+}
+.media-image{
+  padding-top: 5%;
 }

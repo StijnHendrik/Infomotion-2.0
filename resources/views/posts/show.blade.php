@@ -41,7 +41,7 @@
                 <input type="hidden" name="post_id" value="{{ $post->id }}">
 
                 <label for="title" class="col-2 col-form-label">Title:</label>
-                <div class="col-5">
+                <div class="col-md-5 col-sm-8">
                     <input type="text" name="title" class="input-txt" value="{{ $post->title }}">
                 </div>
             </div>
@@ -50,7 +50,7 @@
 
 
                 <label for="title" class="col-2 col-form-label">Text:</label>
-                <div class="col-5">
+                <div class="col-md-5 col-sm-8">
                     <input type="text" name="text" class="input-txt" value="{{ $post->text }}">
                 </div>
             </div>
@@ -59,7 +59,7 @@
 
 
                 <label for="title" class="col-2 col-form-label">Position X:</label>
-                <div class="col-5">
+                <div class="col-md-5 col-sm-8">
                     <input type="text" name="position_x" class="input-txt" value="{{ $post->start_position_x }} ">
                 </div>
             </div>
@@ -69,7 +69,7 @@
 
 
                 <label for="title" class="col-2 col-form-label">Position Y:</label>
-                <div class="col-5">
+                <div class="col-md-5 col-sm-8">
                     <input type="text" name="position_y" class="input-txt" value="{{ $post->start_position_y }} ">
                 </div>
             </div>
@@ -84,10 +84,10 @@
 
             <button type="submit" class="btn">Adjust</button>
             </form>
-            <div class="row">
+            <div class="row media-image">
             @isset($post->media)
                 @foreach($post->media as $media)
-                    <div class="col-2">
+                    <div class="col-4">
                         <img src="{{ url('/images/upload/').'/'.$media->source }}" alt="{{ $media->alt }}">
                         <form method="post" action="/media/{{ $media->id }}">
                             @method('delete')

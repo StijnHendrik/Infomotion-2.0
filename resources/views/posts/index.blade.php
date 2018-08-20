@@ -37,20 +37,20 @@
                         @csrf
                         <div class="form-group row">
                         <label for="title" class="col-2 col-form-label">Title:</label>
-                            <div class="col-5">
+                            <div class="col-md-5 col-sm-8">
                         <input type="text" placeholder="title" name="title" class="input-txt">
                             </div>
                         </div>
 
                         <div class="form-group row">
                         <label for="text" class="col-2 col-form-label">Text:</label>
-                            <div class="col-5">
+                            <div class="col-md-5 col-sm-8">
                         <input type="text" placeholder="text" name="text" class="input-txt">
                             </div>
                         </div>
                         <div class="form-group row">
                         <label for="type_id" class="col-2 col-form-label">Type:</label>
-                            <div class="col-5">
+                            <div class="col-md-5 col-sm-8">
                         <select name="type_id" class="form-control">
                             @foreach($post_types as $post_type)
                                 <option value="{{ $post_type->id }}">{{ $post_type->type }}</option>
@@ -61,28 +61,28 @@
 
                             <div class="form-group row">
                         <label for="start_position_x" class="col-2 col-form-label">Position X:</label>
-                                <div class="col-5">
+                                <div class="col-md-5 col-sm-8">
                         <input type="number" min="1" max="3" name="position_x" value="1" class="form-control">
                             </div>
                             </div>
                         <div class="row form-group">
 
                             <label for="start_position_y" class="col-2 col-form-label">Position Y:</label>
-                            <div class="col-5">
+                            <div class="col-md-5 col-sm-8">
                             <input type="number" min="1" max="3" name="position_y" value="1" class="form-control">
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <label for="media" class="col-2 col-form-label">Images:</label>
-                            <div class="col-10">
+                            <div class="col-md-10 col-sm-7">
                             <input type="file"  class="button btn-secondary" name="media[]" id="media" multiple>
                             </div>
                         </div>
 
                         <div class="row form-group">
         <label class="col-2 col-form-label" for="published">Publish:</label>
-                            <div class="col-5">
+                            <div class="col-md-5 col-sm-8">
         <input type="checkbox" name="published">
                             </div>
                         </div>
